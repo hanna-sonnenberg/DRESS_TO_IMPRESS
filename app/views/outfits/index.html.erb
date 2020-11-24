@@ -1,10 +1,12 @@
 <div class="container-fluid">
-  <div class="d-flex flex-row align-items-space-between flex-grow">
-    <div class="card-box">
+  <div class="row">
+    <div class="col-7">
+
       <h2> Halloween </h2>
-      <div class="d-flex flex-column">
+      <div class="d-flex flex-wrap">
         <% @outfits.each do |outfit| %>
-        <div class="card-product">
+        <%= link_to outfit_path(outfit) do %>
+        <div class="card-product rounded">
           <%= image_tag('banner_image.jpg', class: 'card-img-top rounded-top') %>
           <div class="card-product-infos">
             <h2><%= outfit.name %></h2>
@@ -12,15 +14,13 @@
           </div>
         </div>
         <% end %>
+        <% end %>
       </div>
     </div>
 
-    <div class="map-container">
+    <div class="map-container col-5">
       <div class="map-box" style="background-color: blue;"></div>
     </div>
 
   </div>
 </div>
-
-<!-- TO-DO:
-add link_to auf card um zu show page zu kommen -->
