@@ -1,0 +1,20 @@
+<div class="container h-100">
+  <div class="d-flex flex-row align-items-center h-100">
+    <div class="form-background w-100 d-flex flex-column align-items-center">
+      <div class="form-group">
+        <%= simple_form_for(@outfit) do |f| %>
+          <%= f.input :name %>
+          <%= f.input :size %>
+          <%= f.input :gender %>
+          <%= f.input :price %>
+          <%= f.input :category %>
+          <%= f.input :start_date %>
+          <%= f.input :end_date %>
+          <%= f.input :location %>
+          <%= f.input :photo, as: :file %>
+          <%= f.submit "Create new Outfit", class: "btn-ghost btn-margin" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
