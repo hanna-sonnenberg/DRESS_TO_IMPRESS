@@ -1,0 +1,29 @@
+<h1>Welcome <%= @user.first_name %></h1>
+
+<h2>Outfits</h2>
+
+<div class="d-flex flex-wrap justify-content-center">
+  <% @user.outfits.each do |outfit| %>
+
+  <div class="card-category m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));">
+    <%= outfit.name.capitalize %>
+    <%= link_to outfit do %>
+    <i class="far fa-eye"></i>
+    <% end %>
+  </div>
+  <% end %>
+</div>
+
+<h2>Booking</h2>
+
+<div class="d-flex flex-wrap justify-content-center">
+  <% @user.bookings.each do |booking| %>
+
+  <div class="card-category m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));">
+    <% %>
+    <%= link_to booking do %>
+    <i class="far fa-eye"></i>
+    <% end %>
+  </div>
+  <% end %>
+</div>
