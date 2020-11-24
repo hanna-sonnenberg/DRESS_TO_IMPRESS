@@ -1,16 +1,13 @@
 class BookingsController < ApplicationController
 before_action :set_outfit, only: [:new, :create]
 
-  def new
-    @booking = Booking.new
-  end
   def create
     @booking = Booking.new(booking_params)
     @booking.outfit = @outfit
     if @booking.save
-      redirect_to outfit_path(@outfit)
+      redirect_to dashboard_path
     else
-      render :new
+      render "outfits/show"
     end
   end
 

@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :outfits do
-    resources :bookings, only: [:new, :create]
-    resources :reviews, only: [:new, :create]
+    resources :bookings, only: [:create]
+    resources :reviews, only: [:create]
   end
 
   get "dashboard", to: "pages#dashboard", as: :dashboard

@@ -7,6 +7,12 @@ class PagesController < ApplicationController
 
   def dashboard
      @user = current_user
+     @given_reviews = @user.reviews
+     @outfits = @user.outfits
+
+     # @incoming_reviews = @user.incoming_reviews
+     @bookings = @user.bookings
+     # @incoming_bookings = @user.incoming_bookings
   end
 
   private

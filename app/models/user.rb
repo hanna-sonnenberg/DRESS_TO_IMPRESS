@@ -11,7 +11,9 @@ class User < ApplicationRecord
 
   has_many :outfits, dependent: :destroy
   has_many :bookings, dependent: :destroy
-  has_many :reviews, through: :bookings
+  has_many :reviews
+  # has_many :incoming_reviews, through: :outfits, class_name: "Outfit", source: :outfit
+  # has_many :incoming_bookings, through: :outfits, class_name: "Outfit", source: :outfit
 
   # has_one_attached :photo
 end
