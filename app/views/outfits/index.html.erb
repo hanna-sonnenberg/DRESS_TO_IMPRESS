@@ -1,11 +1,11 @@
 <div class="container">
   <h2>Halloween</h2>
- <% @outfits.each do |outfit| %>
+  <% @outfits.each do |outfit| %>
   <div class="card-index">
-      <%= image_tag('banner-image.jpg', class: 'card-img-top rounded-top') %>
+    <%= image_tag('banner_image.jpg', class: 'card-img-top rounded-top') %>
     <div class="card-body">
       <h4 class="card-title"><%= outfit.name %></h4>
     </div>
   </div>
-<% end %>
+  <% end %>
 </div>
