@@ -5,6 +5,10 @@ class PagesController < ApplicationController
      search
   end
 
+  def dashboard
+     @user = current_user
+  end
+
   private
 
   def search
