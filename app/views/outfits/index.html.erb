@@ -1,11 +1,14 @@
-<div class="container">
-  <h2>Halloween</h2>
-  <% @outfits.each do |outfit| %>
-  <div class="card-index">
-    <%= image_tag('banner_image.jpg', class: 'card-img-top rounded-top') %>
-    <div class="card-body">
-      <h4 class="card-title"><%= outfit.name %></h4>
+<div class="container-fluid">
+  <h2> Halloween </h2>
+    <% @outfits.each do |outfit| %>
+      <div class="d-flex flex-column">
+        <div class="card-product">
+        <%= image_tag('banner_image.jpg', class: 'card-img-top rounded-top') %>
+        <div class="card-product-infos">
+          <h2><%= outfit.name %></h2>
+          <p>Product description with <strong>relevant info</strong> only.</p>
+      </div>
     </div>
-  </div>
-  <% end %>
+    <% end %>
 </div>
+
