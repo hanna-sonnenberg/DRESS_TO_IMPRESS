@@ -1,13 +1,9 @@
 .banner {
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image-url('banner_image.jpg');
+  background-image: linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.3)), image-url('banner_image.jpg');
   background-size: cover;
   background-position: center;
   padding: 150px 0;
   margin: 0;
-
-  .banner-text {
-    color: white;
-  }
 }
 
 
