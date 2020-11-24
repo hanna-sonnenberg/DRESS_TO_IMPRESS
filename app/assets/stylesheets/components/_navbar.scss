@@ -10,3 +10,51 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.dropbtn {
+  color: #64958f;
+  border: 3px solid #64958f;
+  background-color: transparent;
+  padding: 16px 25px;
+  margin: 4px 2px;
+  font-size: 20px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 2px;
+}
+
+.dropdown-content a {
+  color: #64958f;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #b1cac7;
+  border-radius: 2px;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: transparent;
+  color: #b1cac7;
+  border: 3px solid #b1cac7;
+  transition: 0.3s;
+}
