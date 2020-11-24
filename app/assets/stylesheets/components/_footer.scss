@@ -2,5 +2,23 @@
   max-width: 100%;
   color: #A79F98;
   text-align: center;
-  background-color:
+  i {
+    color: #343B40;
+    opacity: 0.3;
+    font-size: 30px;
+    padding: 10px;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  ul {
+    list-style: none;
+
+    li {
+      display: inline;
+      cursor: pointer;
+      transition: color, 200ms;
+
+    }
+  }
 }
