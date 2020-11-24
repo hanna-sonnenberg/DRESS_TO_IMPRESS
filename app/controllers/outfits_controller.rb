@@ -3,7 +3,8 @@ class OutfitsController < ApplicationController
   before_action :set_outfit, only: [:show, :delete, :edit, :update, :destroy]
 
   def index
-    @outfits = Outfit.all
+    @outfits = Outfit.where(category: params[:outfit])
+
   end
 
   def show
