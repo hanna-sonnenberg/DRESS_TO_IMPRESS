@@ -8,8 +8,8 @@
     <%= f.input :price%>
     <%= f.input :gender %>
     <%= f.input :category %>
-    <%= f.date :start_date %>
-    <%= f.date :end_date %>
+    <%= f.date :start_date, order: [:day, :month, :year]  %>
+    <%= f.date :end_date, order: [:day, :month, :year]  %>
     <%= f.input :location %>
 
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
