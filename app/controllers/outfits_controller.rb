@@ -7,6 +7,8 @@ class OutfitsController < ApplicationController
   end
 
   def show
+    @review = Review.new
+    @booking = Booking.new
   end
 
   def new
@@ -39,7 +41,7 @@ class OutfitsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_outfit
       @outfit = Outfit.find(params[:id])
     end
