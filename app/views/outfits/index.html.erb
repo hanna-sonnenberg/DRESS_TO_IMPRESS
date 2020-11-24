@@ -1,3 +1,23 @@
+<<<<<<< HEAD
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-7">
+
+      <h2> Halloween </h2>
+      <div class="d-flex flex-wrap">
+        <% @outfits.each do |outfit| %>
+        <%= link_to outfit_path(outfit) do %>
+        <div class="card-product rounded">
+          <%= image_tag('banner_image.jpg', class: 'card-img-top rounded-top') %>
+          <div class="card-product-infos">
+            <h2><%= outfit.name %></h2>
+            <p>Product description with <strong>relevant info</strong> only.</p>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+=======
 <div class="container">
   <h2>Halloween</h2>
  <% @outfits.each do |outfit| %>
@@ -5,7 +25,12 @@
       <%= image_tag('banner_image.jpg', class: 'card-img-top rounded-top') %>
     <div class="card-body">
       <h4 class="card-title"><%= outfit.name %></h4>
+>>>>>>> master
     </div>
+
+    <div class="map-container col-5">
+      <div class="map-box" style="background-color: blue;"></div>
+    </div>
+
   </div>
-<% end %>
 </div>
