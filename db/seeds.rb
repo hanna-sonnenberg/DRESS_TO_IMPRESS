@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 Outfit.destroy_all
 User.destroy_all
 
@@ -32,3 +33,4 @@ end
 
 puts "#{Outfit.count} new outfits created"
 puts "#{User.count} new user created"
+
