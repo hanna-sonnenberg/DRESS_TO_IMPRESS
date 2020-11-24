@@ -11,6 +11,12 @@
     <i class="far fa-eye"></i>
     <% end %>
   </div>
+
+  <% outfit.reviews.each do |review| %>
+    <%= review.content %>
+    <%= review.rating %>/5
+
+  <% end %>
   <% end %>
 </div>
 

@@ -22,7 +22,7 @@ class OutfitsController < ApplicationController
     if @outfit.update(outfit_params)
       redirect_to outfit_path(@outfit), notice: 'Outfit was successfully updated.'
     else
-      render :edit
+      render :edit, notice: "Something goes wrong..."
     end
   end
 
