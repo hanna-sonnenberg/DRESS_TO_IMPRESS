@@ -9,8 +9,8 @@ class User < ApplicationRecord
   validates :email, email: true
   validates :password, presence: true, length: { in: 6..20 }
 
-  has_many :outfits
-  has_many :bookings
+  has_many :outfits, dependent: :destroy
+  has_many :bookings, dependent: :destroy
   has_many :reviews, through: :bookings
 
   # has_one_attached :photo

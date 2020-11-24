@@ -1,4 +1,5 @@
 class OutfitsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_outfit, only: [:show, :delete, :edit, :update, :destroy]
 
   def index
