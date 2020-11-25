@@ -10,13 +10,3 @@
 @import "button";
 @import "footer";
 @import "btn";
-
-body {
-  padding-top: 100px;
-}
-a {
- text-decoration: none;
- &:hover {
-text-decoration: none;
- }
-}
