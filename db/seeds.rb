@@ -19,11 +19,12 @@ User.create!(last_name: "Sanny", first_name: "Moor", password: 7159113, email: "
 SIZES = ["xs", "s", "m", "l", "xl"]
 CATEGORY = ["halloween", "new year", "christmas", "carnaval", "gala"]
 LOCATION = ["delft", "amsterdam", "berlin", "hague", "paris"]
+NAME = ["name", "reach", "extra", "Go outside", "Night"]
 
 User.all.each do |user|
   10.times do
     Outfit.create(
-    name: "Witch",
+    name: NAME.sample,
     size: SIZES.sample,
     gender: "female",
     price: rand(10..50),
