@@ -18,6 +18,7 @@ User.all.each do |user|
   3.times do
     Outfit.create(
     name: "Witch",
+    description: "Lorem",
     size: SIZES.sample,
     gender: "female",
     price: rand(10..50),

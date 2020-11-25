@@ -40,12 +40,12 @@
 }
 
 .btn:hover {
-background:red;
+background:#67de89;
 }
 
 // rating outfit
 .checked {
-  color: orange;
+  color: #67de89;
 }
 
 
@@ -55,7 +55,17 @@ background:red;
   text-align: center;
 }
 
+// card
+.card {
+  margin-top: 20px;
+  border-radius:5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
 
+.card-header {
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(103,222,137,1) 57%);
+}
 
 
 
