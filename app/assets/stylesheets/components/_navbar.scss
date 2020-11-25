@@ -14,6 +14,8 @@
 .dropdown {
   position: relative;
   display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  weight: regular;
 }
 
 .dropdown-content {
@@ -27,14 +29,14 @@
 }
 
 .dropdown-content a {
-  color: #64958f;
+  color: #C7B2A7;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
 .dropdown-content a:hover {
-  background-color: #b1cac7;
+  background-color: #C7B2A7;
   border-radius: 2px;
   color: white;
 }
@@ -45,8 +47,61 @@
 
 .dropdown:hover .dropbtn {
   background-color: transparent;
-  color: #b1cac7;
-  border: 3px solid #b1cac7;
+  color: #C7B2A7;
+  border: 3px solid #C7B2A7;
   transition: 0.3s;
 }
 
+.navbar {
+  background-color: rgba(63, 58, 60, 0.8)
+}
+
+a.nav-link {
+  padding: 0px 0px;
+  color: #C7B2A7;
+
+}
+
+.nav-item {
+  font-family: 'Open Sans', sans-serif;
+  color: #C7B2A7;
+  display: flex;
+}
+
+// .search .create-outfit {
+//   font-family: 'Open Sans', sans-serif;
+//   background-color: none;
+//   border: none;
+//   box-shadow: none;
+//   margin: 5px;
+//   display: flex;
+// }
+
+button {
+  background-color: transparent;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  color: #353131;
+  display: flex;
+  position: relative;
+}
+
+button :hover {
+  color: #C7B2A7;
+  transition: 0.3s;
+}
+
+.form-control {
+  border: none;
+  border-radius: 0px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  border: none;
+  border-radius: 0px;
+  margin: 5px;
+}
+
+.form {
+  display: flex;
+}
