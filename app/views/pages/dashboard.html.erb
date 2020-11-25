@@ -29,35 +29,51 @@
 </div>
 
 
-<!-- <div class="d-flex flex-wrap justify-content-center">
-  <% @user.outfits.each do |outfit| %>
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="review form-header">
+          <h4>Reviews</h4>
+          <h4></i> <strong>Add review for  </strong></h4>
+          <ul class="list-group">
+            <% @user.reviews.each do |review| %>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div>
+                <span><%= review.content %></span> <br>
 
-  <div class="card-category m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));">
-    <%= outfit.name.capitalize %>
-    <%= link_to outfit do %>
-    <i class="far fa-eye"></i>
-    <% end %>
+                <span><strong>Rating</strong>: <% review.rating.times do %>
+                      <i class="fas fa-star gold"></i>
+                      <% end %>
+                </span>
+
+              </div>
+              <div class="grey">
+                <%= link_to review_path(review),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } do%>
+                <i class="fas fa-trash-alt"></i>
+                <% end %>
+              </div>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+        <div>
+
+
+
+
+        </div>
   </div>
 
-  <% outfit.reviews.each do |review| %>
-    <%= review.content %>
-    <%= review.rating %>/5
-
-  <% end %>
-  <% end %>
-</div>
+  </div>
+</div> -->
 
 <h2>Booking</h2>
-
 <div class="d-flex flex-wrap justify-content-center">
   <% @user.bookings.each do |booking| %>
-
-  <div class="card-category m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));">
-    <% %>
-    <%= link_to booking do %>
-    <i class="far fa-eye"></i>
-    <% end %>
-  </div>
+    <%= booking %>
+    <%= render 'reviews/form', outfit: booking.outfit, review: Review.new %>
   <% end %>
 </div>
- -->
+

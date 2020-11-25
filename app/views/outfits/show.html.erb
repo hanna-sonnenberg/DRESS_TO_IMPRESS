@@ -1,47 +1,45 @@
+<div class="container">
+  <h1>NAVBAR WILL COME HERE</h1>
+  <h1>All outfits for: <%= @outfit.category %></h1>
+    <div class="row grid-row">
+      <div class="col grid-col">
+        <p> Outfit image 1 </p>
+      </div>
+    </div>
 
-
-  <div class="container">
-    <h1>NAVBAR WILL COME HERE</h1>
-    <h1>All outfits for: <%= @outfit.category %></h1>
-      <div class="row grid-row">
-        <div class="col grid-col">
-          <p> Outfit image 1 </p>
-        </div>
+    <div class="row grid-row">
+      <div class="col-md-8 col-sm-6 grid-col">
+        <p> Outfit image 2 </p>
       </div>
-
-      <div class="row grid-row">
-        <div class="col-md-8 col-sm-6 grid-col">
-          <p> Outfit image 2 </p>
-        </div>
-        <div class="col-md-4 col-sm-6 grid-col">
-          <p> Outfit image 3 </p>
-        </div>
+      <div class="col-md-4 col-sm-6 grid-col">
+        <p> Outfit image 3 </p>
       </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-8">
-        <h1> <%= @outfit.name %></h1>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
-        <span class="fa fa-star"></span>
-        <p> Outfit description </p>
+    </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <h1> <%= @outfit.name %></h1>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <p> Outfit description </p>
+    </div>
+  <div class="row">
+    <div class="col-md-12 col-sm-12">
+      <!-- Booking -->
+      <div class="booking form-header">
+      <h4></i> <strong class="text-center">Book for <%= @outfit.name %> </strong></h4>
+      <%= render 'bookings/form', outfit: @outfit, booking: @booking %>
       </div>
-    <div class="row">
-      <div class="col-md-12 col-sm-12">
-        <!-- Booking -->
-        <div class="booking form-header">
-        <h4></i> <strong class="text-center">Book for <%= @outfit.name %> </strong></h4>
-        <%= render 'bookings/form', outfit: @outfit, booking: @booking %>
-        </div>
-      </div>
-  </div>
+    </div>
+</div>
 
 
 <!-- Review Move to Dashboard!!! -->
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="col-md-12">
       <div class="review form-header">
@@ -79,4 +77,4 @@
   </div>
 
   </div>
-</div>
+</div> -->
