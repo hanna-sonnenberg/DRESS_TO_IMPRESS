@@ -17,11 +17,12 @@ class OutfitsController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
     if @outfit.update(outfit_params)
-      redirect_to outfit_path(@outfit), notice: 'Outfit was successfully updated.'
+      redirect_to dashboard_path, notice: 'Outfit was successfully updated.'
     else
       render :edit, notice: "Something goes wrong..."
     end
