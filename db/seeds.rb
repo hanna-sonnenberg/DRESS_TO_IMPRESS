@@ -21,7 +21,7 @@ CATEGORY = ["halloween", "new year", "christmas", "carnaval", "gala"]
 LOCATION = ["delft", "amsterdam", "berlin", "hague", "paris"]
 
 User.all.each do |user|
-  3.times do
+  10.times do
     Outfit.create(
     name: "Witch",
     size: SIZES.sample,
@@ -31,12 +31,11 @@ User.all.each do |user|
     location: LOCATION.sample,
     start_date: Date.new(2020,5,23),
     end_date: Date.new(2020,5,24),
+    description: "Some text appeared here",
     user: user
     )
   end
 end
-
-
 
 puts "#{Outfit.count} new outfits created"
 puts "#{User.count} new user created"
