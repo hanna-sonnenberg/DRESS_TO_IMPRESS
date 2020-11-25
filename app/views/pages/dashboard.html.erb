@@ -1,8 +1,35 @@
-<h1>Welcome <%= @user.first_name %></h1>
+<div class="container-fluid">
 
-<h2>Outfits</h2>
+  <h1>Welcome <%= @user.first_name %></h1>
 
-<div class="d-flex flex-wrap justify-content-center">
+  <h2>Outfits</h2>
+
+  <div class="card-container">
+    <% @user.outfits.each do |outfit| %>
+      <div class="card" style="">
+        <%= image_tag('banner_image.jpg', class: 'card-img-top rounded-top') %>
+        <%#= cl_image_tag(outfit.photo.key, class: 'card-img-top rounded-top') %>
+        <div class="card-body">
+          <h4 class="card-title"><%= outfit.name.capitalize %></h4>
+          <%= link_to outfit do %>
+            <i class="far fa-eye"></i>
+          <% end %>
+          <%= link_to edit_outfit_path(outfit) do %>
+            <i class="fas fa-pencil-alt"></i>
+          <% end %>
+          <%= link_to  outfit_path(outfit),
+            method: :delete,
+            data: { confirm: "Are you sure?" } do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<!-- <div class="d-flex flex-wrap justify-content-center">
   <% @user.outfits.each do |outfit| %>
 
   <div class="card-category m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));">
@@ -33,3 +60,4 @@
   </div>
   <% end %>
 </div>
+ -->
