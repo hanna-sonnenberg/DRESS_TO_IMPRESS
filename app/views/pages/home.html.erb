@@ -1,55 +1,39 @@
-<div class="homepage">
-  <div class="dropdown">
-    <button class="dropbtn">Register</button>
-    <div class="dropdown-content">
-      <a href="#">Register</a>
-      <a href="#">Log In</a>
-    </div>
-  </div>
-
-  <div class="container-fluid" style="padding:0">
-  <!-- banner section -->
+    <!-- banner section -->
     <div class="banner d-flex flex-column align-items-center">
-      <div class="navbar">
-      </div>
       <div class="logo-banner-image">
         <img src="../assets/logo_banner_image.png">
       </div>
     </div>
-  </div>
+  <!-- container section -->
+  <!-- set width in container -->
+  <div class="container-categories">
+    <h2 class="text-center mb-4">Categories</h2>
+    <div class="categories d-flex flex-row flex-wrap justify-content-around">
+      <div class="d-flex flex-column mb-4 mb-md-4">
+        <img src="../assets/photo-1583456573521-0f1578cbd559 2" alt="Gala Dresses" class="background">
+        <%= link_to "Gala", outfits_path(:category => "Gala"), id: "category-title" %>
+      </div>
 
-    <!-- container section -->
-    <!-- set width in container -->
-    <div class="container-categories">
-      <h2>Categories</h2>
-      <div class="categories d-flex flex-row flex-wrap justify-content-around">
-        <div class="d-flex flex-column mb-4 mb-md-4">
-          <img src="../assets/photo-1583456573521-0f1578cbd559 2" alt="Gala Dresses" class="background">
-          <span id="category-title">Gala</span>
-        </div>
+      <div class="d-flex flex-column mb-4 mb-md-4">
+        <img src="../assets/photo-1550614000-4895a10e1bfd" alt="Christmas Dresses" class="background">
+        <%= link_to "Christmas", outfits_path(:category => "christmas"), id: "category-title" %>
+      </div>
 
-        <div class="d-flex flex-column mb-4 mb-md-4">
-          <img src="../assets/photo-1550614000-4895a10e1bfd" alt="Christmas Dresses" class="background">
-          <span id="category-title">Christmas</span>
-        </div>
+      <div class="d-flex flex-column mb-4 mb-md-4">
+        <img src="../assets/photo-1565324777053-0f607a0d3bdf 2" alt="New Years Dresses" class="background">
+        <%= link_to "New Year", outfits_path(:category => "new year"), id: "category-title" %>
+      </div>
 
-        <div class="d-flex flex-column mb-4 mb-md-4">
-          <img src="../assets/photo-1565324777053-0f607a0d3bdf 2" alt="New Years Dresses" class="background">
-          <span id="category-title">New Years</span>
-        </div>
+      <div class="d-flex flex-column mb-4 mb-md-4">
+        <img src="../assets/photo-1531746244603-771e038e9d5c 2" alt="Halloween Dresses" class="background">
+        <%= link_to "Halloween", outfits_path(:category => "halloween"), id: "category-title" %>
+      </div>
 
-        <div class="d-flex flex-column mb-4 mb-md-4">
-          <img src="../assets/photo-1531746244603-771e038e9d5c 2" alt="Halloween Dresses" class="background">
-          <span id="category-title">Halloween</span>
-        </div>
+      <div class="d-flex flex-column mb-4 mb-md-4">
+        <img src="../assets/photo-1531746244603-771e038e9d5c 2" alt="Carnaval Dresses" class="background">
+        <%= link_to "Carnaval", outfits_path(:category => "carnaval"), id: "category-title" %>
       </div>
     </div>
-
-    <div class="footer">
-      <ul>
-        <li>Instagram</li>
-        <li>Facebook</li>
-      </ul>
-    </div>
   </div>
-</div>
+
+

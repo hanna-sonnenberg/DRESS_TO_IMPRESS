@@ -7,7 +7,7 @@ class Outfit < ApplicationRecord
   validates :size, presence: true, inclusion: { in: %w(xs s m l xl) }
   validates :gender, presence: true, inclusion: { in: %w(male female) }
   validates :price, presence: true
-  validates :category, presence: true, inclusion: { in: %w(gala christmas carnaval halloween) }
+  validates :category, presence: true, inclusion: { in: ["gala", "christmas", "carnaval", "halloween", "new year"] }
   validates :location, presence: true
   # validates :start_date, :end_date, presence: true
   # validate :end_date_after_start_date

@@ -31,6 +31,9 @@ User.all.each do |user|
 end
 
 
+
 puts "#{Outfit.count} new outfits created"
 puts "#{User.count} new user created"
+
+
 

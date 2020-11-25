@@ -3,7 +3,8 @@ class OutfitsController < ApplicationController
   before_action :set_outfit, only: [:show, :delete, :edit, :update, :destroy]
 
   def index
-    @outfits = Outfit.all
+    @outfits = Outfit.where(category: params[:category])
+    @category = params[:category]
   end
 
   def show
@@ -33,6 +34,7 @@ class OutfitsController < ApplicationController
 
   def create
      @outfit = Outfit.new(outfit_params)
+     @outfit.user = current_user
      if @outfit.save
       redirect_to outfit_path(@outfit)
     else
