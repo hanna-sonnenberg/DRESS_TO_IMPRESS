@@ -4,6 +4,7 @@ before_action :set_outfit, only: [:new, :create]
   def create
     @booking = Booking.new(booking_params)
     @booking.outfit = @outfit
+    @booking.user = current_user
     if @booking.save
       redirect_to dashboard_path
     else

@@ -6,32 +6,49 @@
     </div>
   <!-- container section -->
   <!-- set width in container -->
+
+
   <div class="container-categories">
     <h2 class="text-center mb-4">CATEGORIES</h2>
     <div class="categories d-flex flex-row flex-wrap justify-content-around">
       <div class="d-flex flex-column mb-4 mb-md-4">
-        <img src="../assets/photo-1583456573521-0f1578cbd559 2" alt="Gala Dresses" class="background">
-        <%= link_to "Gala", outfits_path(:category => "Gala"), id: "category-title" %>
+        <%= link_to outfits_path(:category => "Gala"), id: "category-title" do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'picture1.jpeg' %>);">
+         Gala
+        </div>
+        <% end %>
       </div>
 
       <div class="d-flex flex-column mb-4 mb-md-4">
-        <img src="../assets/photo-1550614000-4895a10e1bfd" alt="Christmas Dresses" class="background">
-        <%= link_to "Christmas", outfits_path(:category => "christmas"), id: "category-title" %>
+        <%= link_to outfits_path(:category => "christmas"), id: "category-title" do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'picture2.jpeg' %>);">
+         Christmas
+        </div>
+        <% end %>
       </div>
 
       <div class="d-flex flex-column mb-4 mb-md-4">
-        <img src="../assets/photo-1565324777053-0f607a0d3bdf 2" alt="New Years Dresses" class="background">
-        <%= link_to "New Year", outfits_path(:category => "new year"), id: "category-title" %>
+        <%= link_to outfits_path(:category => "new year"), id: "category-title" do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'picture3.jpeg' %>);">
+         New Year
+        </div>
+        <% end %>
       </div>
 
       <div class="d-flex flex-column mb-4 mb-md-4">
-        <img src="../assets/photo-1531746244603-771e038e9d5c 2" alt="Halloween Dresses" class="background">
-        <%= link_to "Halloween", outfits_path(:category => "halloween"), id: "category-title" %>
+        <%= link_to outfits_path(:category => "halloween"), id: "category-title" do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'picture4.jpeg' %>);">
+         Halloween
+        </div>
+        <% end %>
       </div>
 
       <div class="d-flex flex-column mb-4 mb-md-4">
-        <img src="../assets/photo-1531746244603-771e038e9d5c 2" alt="Carnaval Dresses" class="background">
-        <%= link_to "Carnaval", outfits_path(:category => "carnaval"), id: "category-title" %>
+        <%= link_to outfits_path(:category => "carnaval"), id: "category-title" do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'picture5.jpeg' %>);">
+         Carnaval
+        </div>
+        <% end %>
       </div>
     </div>
   </div>

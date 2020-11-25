@@ -5,6 +5,16 @@ class OutfitsController < ApplicationController
   def index
     @outfits = Outfit.where(category: params[:category])
     @category = params[:category]
+
+    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+    @markers = @outfits.geocoded.map do |outfit|
+      {
+        lat: outfit.latitude,
+        lng: outfit.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { outfit: outfit }),
+        image_url: helpers.image_url('marker2.png')
+      }
+    end
   end
 
   def show
@@ -17,11 +27,12 @@ class OutfitsController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
     if @outfit.update(outfit_params)
-      redirect_to outfit_path(@outfit), notice: 'Outfit was successfully updated.'
+      redirect_to dashboard_path, notice: 'Outfit was successfully updated.'
     else
       render :edit, notice: "Something goes wrong..."
     end
@@ -29,7 +40,7 @@ class OutfitsController < ApplicationController
 
   def destroy
     @outfit.destroy
-    redirect_to root_path, notice: 'Outfit was successfully destroyed.'
+    redirect_to dashboard_path, notice: 'Outfit was successfully destroyed.'
   end
 
   def create
@@ -37,7 +48,7 @@ class OutfitsController < ApplicationController
      @outfit.user = current_user
      if @outfit.save
       redirect_to outfit_path(@outfit)
-    else
+      else
       render :new
     end
   end

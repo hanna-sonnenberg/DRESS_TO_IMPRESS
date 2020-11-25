@@ -1,22 +1,35 @@
+<div class="container">
+  <h1>NAVBAR WILL COME HERE</h1>
+  <h1>All outfits for: <%= @outfit.category %></h1>
+    <div class="row grid-row">
+      <div class="col grid-col">
+        <p> Outfit image 1 </p>
+      </div>
+    </div>
 
-
-  <div class="container">
-    <h1>NAVBAR WILL COME HERE</h1>
-    <h1>All outfits for: <%= @outfit.category %></h1>
-      <div class="row grid-row">
-        <div class="col grid-col">
+    <div class="row grid-row">
+      <div class="col-md-8 col-sm-6 grid-col">
+        <p> Outfit image 2 </p>
+      </div>
+      <div class="col-md-4 col-sm-6 grid-col">
+        <p> Outfit image 3 </p>
+      <div class="row">
+        <div class="col-5 ">
           <p> Outfit image 1 </p>
         </div>
-      </div>
 
-      <div class="row grid-row">
-        <div class="col-md-8 col-sm-6 grid-col">
+
+      <div class="col-7">
+        <div class="col-md-8 col-sm-6">
           <p> Outfit image 2 </p>
         </div>
-        <div class="col-md-4 col-sm-6 grid-col">
+        <div class="col-md-4 col-sm-6">
           <p> Outfit image 3 </p>
         </div>
       </div>
+      </div>
+
+
   </div>
   <div class="container">
     <div class="row">
@@ -25,58 +38,80 @@
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
         <span class="fa fa-star"></span>
-        <span class="fa fa-star"></span>
-        <p> Outfit description </p>
+        <h3> Product description </h3>
+        <p> <%= @outfit.description %></p>
       </div>
-    <div class="row">
-      <div class="col-md-12 col-sm-12">
-        <!-- Booking -->
-        <div class="booking form-header">
-        <h4></i> <strong class="text-center">Book for <%= @outfit.name %> </strong></h4>
-        <%= render 'bookings/form', outfit: @outfit, booking: @booking %>
-        </div>
-      </div>
-  </div>
-
-
-<!-- Review Move to Dashboard!!! -->
+    </div>
+</div>
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <div class="review form-header">
-          <h4>Reviews</h4>
-          <h4></i> <strong>Add review for <%= @outfit.name %> </strong></h4>
-          <ul class="list-group">
-            <% @outfit.reviews.each do |review| %>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <div>
-                <span><%= review.content %></span> <br>
+    <div class="col-8">
+      <h1> <%= @outfit.name %></h1>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <p> Outfit description </p>
+    </div>
+  <div class="row">
+    <div class="col-md-12 col-sm-12">
+      <!-- Booking -->
+      <div class="booking form-header">
+      <h4></i> <strong class="text-center">Book for <%= @outfit.name %> </strong></h4>
+      <%= render 'bookings/form', outfit: @outfit, booking: @booking %>
+      </div>
+    </div>
+</div>
 
-                <span><strong>Rating</strong>: <% review.rating.times do %>
-                      <i class="fas fa-star gold"></i>
-                      <% end %>
-                </span>
-
-              </div>
-              <div class="grey">
-                <%= link_to review_path(review),
-                method: :delete,
-                data: { confirm: 'Are you sure?' } do%>
-                <i class="fas fa-trash-alt"></i>
-                <% end %>
-              </div>
-            </li>
-            <% end %>
-          </ul>
+  <!-- Review cards -->
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+       <div class="card">
+        <div class="card-header">
+          Review
         </div>
-        <div>
-
-
-          <%= render 'reviews/form', outfit: @outfit, review: @review %>
-
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer class="blockquote-footer">John Doe </footer>
+          </blockquote>
         </div>
-  </div>
-
+      </div>
+    </div>
+    <div class="col-4">
+       <div class="card">
+        <div class="card-header">
+          Review
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer class="blockquote-footer">John Doe </footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+       <div class="card">
+        <div class="card-header">
+          Review
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer class="blockquote-footer">John Doe </footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+
+
+
+
