@@ -1,13 +1,15 @@
 class ReviewsController < ApplicationController
-  before_action :set_outfit, only: [:new, :create]
+  before_action :set_outfit, only: [:create]
 
   def create
     @review = Review.new(review_params)
     @review.outfit = @outfit
+    @review.user = current_user
     if @review.save
       redirect_to outfit_path(@outfit)
     else
-      render :new
+      @booking = Booking.new
+      render "outfits/show"
     end
   end
 
