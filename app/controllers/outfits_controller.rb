@@ -37,7 +37,7 @@ class OutfitsController < ApplicationController
      @outfit.user = current_user
      if @outfit.save
       redirect_to outfit_path(@outfit)
-    else
+      else
       render :new
     end
   end
