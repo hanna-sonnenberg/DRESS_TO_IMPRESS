@@ -40,7 +40,7 @@
 }
 
 .btn:hover {
-background:red;
+background:#68de89;
 }
 
 // rating outfit
@@ -55,10 +55,10 @@ background:red;
   text-align: center;
 }
 
+// review
 
-
-
-
-
-
+.card-header {
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(103,222,137,1) 57%);
+}
 
