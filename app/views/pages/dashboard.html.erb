@@ -51,38 +51,38 @@
           <h4>Reviews</h4>
           <h4></i> <strong>Add review for  </strong></h4>
           <ul class="list-group">
-            <% @user.reviews.each do |review| %>
+            <%# @user.reviews.each do |review| %>
             <li class="list-group-item d-flex justify-content-between align-items-center">
               <div>
-                <span><%= review.content %></span> <br>
+                <span><%#= review.content %></span> <br>
 
-                <span><strong>Rating</strong>: <% review.rating.times do %>
+                <span><strong>Rating</strong>: <%# review.rating.times do %>
                       <i class="fas fa-star gold"></i>
-                      <% end %>
+                      <%# end %>
                 </span>
 
               </div>
               <div class="grey">
-                <%= link_to review_path(review),
+                <%#= link_to review_path(review),
                 method: :delete,
                 data: { confirm: 'Are you sure?' } do%>
                 <i class="fas fa-trash-alt"></i>
-                <% end %>
+                <%# end %>
               </div>
             </li>
-            <% end %>
+            <%# end %>
           </ul>
         </div>
         <div>
 
-  <% end %>
-  <% end %>
+  <%# end %>
+  <%# end %>
 </div>
  -->
 
 
 
-
+<!--
 
         </div>
   </div>
