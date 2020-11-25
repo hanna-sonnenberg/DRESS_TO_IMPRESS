@@ -3,13 +3,11 @@
   <div class="dropdown">
     <button class="dropbtn">REGISTER</button>
     <div class="dropdown-content">
+      <% if user_signed_in? %>
+      <%= link_to "Log Out",  destroy_user_session_path, method: :delete %>
+      <% else %>
       <%= link_to "REGISTER", new_user_registration_path %>
       <%= link_to "LOG IN", user_session_path %>
-      <% if user_signed_in? %>
-        <%= link_to "Log Out",  destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to "Register", new_user_registration_path %>
-        <%= link_to "Log In", user_session_path %>
       <% end %>
     </div>
   </div>
@@ -25,17 +23,11 @@
           <%= link_to 'DASHBOARD', dashboard_path, class: "nav-link" %>
         </li>
       </button>
-      <li class="nav-item active">
-        <%= link_to 'Home', root_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'Dashboard', dashboard_path, class: "nav-link" %>
-      </li>
     </ul>
     <form class="form mt-2 mt-md-0" action="" method="get">
       <input  class="form-control mr-sm-2" name="search" type="text" placeholder="..." aria-label="Search">
-      <button class="search" type="submit">SEARCH</button>
-      <%= link_to 'CREATE OUTFIT', new_outfit_path, class: "create-outfit" %>
+      <button class="search pt-2" type="submit">SEARCH</button>
+      <%= link_to 'CREATE OUTFIT', new_outfit_path, class: "nav-link ml-3" %>
     </form>
   </div>
 </nav>
