@@ -1,8 +1,10 @@
 
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<nav class="navbar navbar-expand-md fixed-top">
   <div class="dropdown">
-    <button class="dropbtn">Register</button>
+    <button class="dropbtn">REGISTER</button>
     <div class="dropdown-content">
+      <%= link_to "REGISTER", new_user_registration_path %>
+      <%= link_to "LOG IN", user_session_path %>
       <% if user_signed_in? %>
         <%= link_to "Log Out",  destroy_user_session_path, method: :delete %>
       <% else %>
@@ -13,6 +15,16 @@
   </div>
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
+      <button class="dropbtn">
+        <li class="nav-item active">
+          <%= link_to 'HOME', root_path, class: "nav-link" %>
+        </li>
+      </button>
+      <button class="dropbtn">
+        <li class="nav-item">
+          <%= link_to 'DASHBOARD', dashboard_path, class: "nav-link" %>
+        </li>
+      </button>
       <li class="nav-item active">
         <%= link_to 'Home', root_path, class: "nav-link" %>
       </li>
@@ -20,10 +32,10 @@
         <%= link_to 'Dashboard', dashboard_path, class: "nav-link" %>
       </li>
     </ul>
-    <form class="form-inline mt-2 mt-md-0" action="" method="get">
-      <input  class="form-control mr-sm-2" name="search" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0 mr-1" type="submit">Search</button>
-      <%= link_to 'Create Outfit', new_outfit_path, class: "btn btn-outline-success my-2 my-sm-0" %>
+    <form class="form mt-2 mt-md-0" action="" method="get">
+      <input  class="form-control mr-sm-2" name="search" type="text" placeholder="..." aria-label="Search">
+      <button class="search" type="submit">SEARCH</button>
+      <%= link_to 'CREATE OUTFIT', new_outfit_path, class: "create-outfit" %>
     </form>
   </div>
 </nav>

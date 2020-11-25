@@ -1,29 +1,38 @@
 .dropbtn {
-  color: #64958f;
-  border: 3px solid #64958f;
+  position: relative;
+  color: #C7B2A7;
+  border: none;
+  box-shadow: none;
   background-color: transparent;
   padding: 16px 25px;
   margin: 4px 2px;
   font-size: 20px;
+  border: 3px solid transparent;
   &:hover {
     background-color: transparent;
-  color: #b1cac7;
-  border: 3px solid #b1cac7;
+  color: #C7B2A7;
+  border: 3px solid #C7B2A7;
   transition: 0.3s;
   }
 }
 
 .btn_register {
-  color: #64958f;
-  border: 3px solid #64958f;
+  position: relative;
+  color: #C7B2A7;
+  border: 3px solid #C7B2A7;
   background-color: transparent;
   padding: 5px 8px;
   margin: 4px 2px;
   font-size: 14px;
   &:hover {
     background-color: transparent;
-  color: #b1cac7;
-  border: 3px solid #b1cac7;
+  color: #C7B2A7;
+  border: 3px solid #C7B2A7;
   transition: 0.3s;
   }
 }
+
+.btn :hover {
+  color: #C7B2A7;
+}
+
