@@ -5,6 +5,16 @@ class OutfitsController < ApplicationController
   def index
     @outfits = Outfit.where(category: params[:category])
     @category = params[:category]
+
+    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+    @markers = @outfits.geocoded.map do |outfit|
+      {
+        lat: outfit.latitude,
+        lng: outfit.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { outfit: outfit }),
+        image_url: helpers.image_url('marker2.png')
+      }
+    end
   end
 
   def show
