@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
   private
 
   def set_outfit
-    @outfit = Cocktail.find(params[:outfit_id])
+    @outfit = Outfit.find(params[:outfit_id])
   end
 
   def review_params
