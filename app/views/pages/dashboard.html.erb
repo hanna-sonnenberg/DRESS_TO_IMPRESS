@@ -7,7 +7,13 @@
   <div class="card-container">
     <% @user.outfits.each do |outfit| %>
     <div class="card" style="">
-      <%= image_tag('banner_image.jpg', class: 'card-img-top rounded-top') %>
+      <% if outfit.photos.attached? %>
+        <%= cl_image_tag(outfit.photos[0].key, class: 'card-img-top rounded-top') %>
+      <% else %>
+        <%= image_tag('banner_image.jpg', class: 'card-img-top rounded-top') %>
+      <% end %>
+      <%#= image_tag('banner_image.jpg', class: 'card-img-top rounded-top') %>
+      <%#= outfit.photos %>
       <%#= cl_image_tag(outfit.photo.key, class: 'card-img-top rounded-top') %>
       <div class="card-body">
         <h4 class="card-title"><%= outfit.name.capitalize %></h4>
