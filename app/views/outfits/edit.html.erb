@@ -1,0 +1,28 @@
+<div class="container-fluid" style="padding:0">
+  <!-- <div class="banner d-flex flex-column align-items-center" style="padding: 100px 0">
+    <div class="navbar">
+    </div>
+    <div class="logo-banner-image">
+      <img src="../assets/logo_banner_image.png">
+    </div>
+  </div> -->
+  <h2>Edit your <%= @outfit %> Outfit </h2>
+  <div class="d-flex flex-row align-items-center">
+    <div class="form-background w-100 d-flex flex-column align-items-center">
+      <div class="form-group">
+        <%= simple_form_for(@outfit) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :size %>
+        <%= f.input :gender %>
+        <%= f.input :price %>
+        <%= f.input :category %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.input :location %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit "Edit", class: "btn-margin btn-ghost" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
