@@ -6,24 +6,39 @@
 
   <div class="card-container">
     <% @user.outfits.each do |outfit| %>
-      <div class="card" style="">
-        <%= image_tag('banner_image.jpg', class: 'card-img-top rounded-top') %>
-        <%#= cl_image_tag(outfit.photo.key, class: 'card-img-top rounded-top') %>
-        <div class="card-body">
-          <h4 class="card-title"><%= outfit.name.capitalize %></h4>
-          <%= link_to outfit do %>
-            <i class="far fa-eye"></i>
-          <% end %>
-          <%= link_to edit_outfit_path(outfit) do %>
-            <i class="fas fa-pencil-alt"></i>
-          <% end %>
-          <%= link_to  outfit_path(outfit),
-            method: :delete,
-            data: { confirm: "Are you sure?" } do %>
-            <i class="fas fa-trash"></i>
-          <% end %>
-        </div>
+    <div class="card" style="">
+      <%= image_tag('banner_image.jpg', class: 'card-img-top rounded-top') %>
+      <%#= cl_image_tag(outfit.photo.key, class: 'card-img-top rounded-top') %>
+      <div class="card-body">
+        <h4 class="card-title"><%= outfit.name.capitalize %></h4>
+        <%= link_to outfit do %>
+        <i class="far fa-eye"></i>
+        <% end %>
+        <%= link_to edit_outfit_path(outfit) do %>
+        <i class="fas fa-pencil-alt"></i>
+        <% end %>
+        <%= link_to  outfit_path(outfit),
+        method: :delete,
+        data: { confirm: "Are you sure?" } do %>
+        <i class="fas fa-trash"></i>
+        <% end %>
       </div>
+    </div>
+    <% end %>
+  </div>
+
+  <h2>Bookings:</h2>
+  <div class="">
+    <% @user.bookings.each do |booking| %>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+
+        <h5 class="card-title"><%= link_to "outfit", outfit_path(booking.outfit) %></h5>
+        <p class="card-text"> Adress: <%= booking.address %></p>
+        <p class="card-text"> Start Date: <%= booking.start_date %></p>
+        <p class="card-text"> End Date: <%= booking.end_date %></p>
+      </div>
+    </div>
     <% end %>
   </div>
 </div>
@@ -59,6 +74,12 @@
           </ul>
         </div>
         <div>
+
+  <% end %>
+  <% end %>
+</div>
+ -->
+
 
 
 
