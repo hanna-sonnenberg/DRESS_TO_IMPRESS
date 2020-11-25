@@ -12,10 +12,12 @@
       <div class="form-group">
         <%= simple_form_for(@outfit) do |f| %>
         <%= f.input :name %>
-        <%= f.input :size %>
-        <%= f.input :gender %>
+        <%= f.input :size, :collection => %w(xs s m l xl) %>
+        <%= f.input :gender, :collection => %w(male female) %>
         <%= f.input :price %>
+        <%= f.input :category, :collection => ["gala", "christmas", "carnaval", "halloween", "new year"] %>
         <%= f.input :category %>
+        <%= f.input :description %>
         <%= f.input :start_date %>
         <%= f.input :end_date %>
         <%= f.input :location %>

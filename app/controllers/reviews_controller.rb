@@ -23,6 +23,7 @@ class ReviewsController < ApplicationController
 
   def set_outfit
     @outfit = Outfit.find(params[:outfit_id])
+
   end
 
   def review_params

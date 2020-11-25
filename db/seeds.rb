@@ -31,7 +31,7 @@ User.all.each do |user|
     location: LOCATION.sample,
     start_date: Date.new(2020,5,23),
     end_date: Date.new(2020,5,24),
-    description: "Some text appeared here",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus orci sapien, luctus vel odio id, hendrerit congue nisi. Morbi finibus nec urna a molestie. Fusce mi sapien, rutrum non elementum et, feugiat vitae odio. Integer id nunc vel risus egestas ullamcorper. Suspendisse potenti. Praesent non tellus vitae mi sodales eleifend eget eget sem. Quisque vitae dignissim dolor.",
     user: user
     )
   end

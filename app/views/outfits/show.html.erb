@@ -13,6 +13,35 @@
       </div>
       <div class="col-md-4 col-sm-6 grid-col">
         <p> Outfit image 3 </p>
+      <div class="row">
+        <div class="col-5 ">
+          <p> Outfit image 1 </p>
+        </div>
+
+
+      <div class="col-7">
+        <div class="col-md-8 col-sm-6">
+          <p> Outfit image 2 </p>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <p> Outfit image 3 </p>
+        </div>
+      </div>
+      </div>
+
+
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <h1> <%= @outfit.name %></h1>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <h3> Product description </h3>
+        <p> <%= @outfit.description %></p>
       </div>
     </div>
 </div>
@@ -37,6 +66,54 @@
     </div>
 </div>
 
+  <!-- Review cards -->
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+       <div class="card">
+        <div class="card-header">
+          Review
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer class="blockquote-footer">John Doe </footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+       <div class="card">
+        <div class="card-header">
+          Review
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer class="blockquote-footer">John Doe </footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+       <div class="card">
+        <div class="card-header">
+          Review
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer class="blockquote-footer">John Doe </footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 
 <!-- Review Move to Dashboard!!! -->
 <!-- <div class="container">
@@ -50,12 +127,10 @@
             <li class="list-group-item d-flex justify-content-between align-items-center">
               <div>
                 <span><%= review.content %></span> <br>
-
                 <span><strong>Rating</strong>: <% review.rating.times do %>
                       <i class="fas fa-star gold"></i>
                       <% end %>
                 </span>
-
               </div>
               <div class="grey">
                 <%= link_to review_path(review),
@@ -69,12 +144,8 @@
           </ul>
         </div>
         <div>
-
-
           <%= render 'reviews/form', outfit: @outfit, review: @review %>
-
         </div>
   </div>
-
   </div>
 </div> -->
