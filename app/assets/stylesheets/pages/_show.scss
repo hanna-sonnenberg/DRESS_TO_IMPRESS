@@ -1,0 +1,64 @@
+.container {
+  width: 100%;
+  margin: 1rem auto;
+}
+
+// grid
+
+.grid-container {
+  border: 1px solid black;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+}
+
+.grid-row {
+  border: 1px solid red;
+  height: 300px;
+  margin-bottom: 10px;
+  border-radius:5px;
+
+}
+
+.grid-col {
+  border: 2px solid blue;
+
+}
+
+// booking-form
+
+.booking {
+  background-color: white;
+  padding: 20px 5px 0px 10px;
+  border-radius:5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+}
+
+.btn {
+  border-radius:5px;
+  border: none;
+}
+
+.btn:hover {
+background:red;
+}
+
+// rating outfit
+.checked {
+  color: orange;
+}
+
+
+// form
+
+.form-header {
+  text-align: center;
+}
+
+
+
+
+
+
+
+
