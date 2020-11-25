@@ -29,7 +29,7 @@ class OutfitsController < ApplicationController
 
   def destroy
     @outfit.destroy
-    redirect_to root_path, notice: 'Outfit was successfully destroyed.'
+    redirect_to dashboard_path, notice: 'Outfit was successfully destroyed.'
   end
 
   def create
