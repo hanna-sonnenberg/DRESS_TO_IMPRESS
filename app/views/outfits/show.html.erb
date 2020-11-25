@@ -88,37 +88,3 @@
 
 
 
-<!-- Review Move to Dashboard!!! -->
-<!-- <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="review form-header">
-          <h4>Reviews</h4>
-          <h4></i> <strong>Add review for <%= @outfit.name %> </strong></h4>
-          <ul class="list-group">
-            <% @outfit.reviews.each do |review| %>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <div>
-                <span><%= review.content %></span> <br>
-                <span><strong>Rating</strong>: <% review.rating.times do %>
-                      <i class="fas fa-star gold"></i>
-                      <% end %>
-                </span>
-              </div>
-              <div class="grey">
-                <%= link_to review_path(review),
-                method: :delete,
-                data: { confirm: 'Are you sure?' } do%>
-                <i class="fas fa-trash-alt"></i>
-                <% end %>
-              </div>
-            </li>
-            <% end %>
-          </ul>
-        </div>
-        <div>
-          <%= render 'reviews/form', outfit: @outfit, review: @review %>
-        </div>
-  </div>
-  </div>
-</div> -->
