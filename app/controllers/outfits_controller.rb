@@ -30,7 +30,6 @@ class OutfitsController < ApplicationController
   end
 
   def show
-    @review = Review.new
     @booking = Booking.new
     @marker =
       [{
