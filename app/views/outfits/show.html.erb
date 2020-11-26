@@ -5,9 +5,9 @@
       <div id="carousel-outfit" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <% if @outfit.photos.attached? %>
-          <% @outfit.photos.each do |photo| %>
-          <div class="carousel-item active">
-            <%= cl_image_tag(@outfit.photo.key, class: "d-block w-100") %>
+          <% @outfit.photos.each_with_index do |photo, index| %>
+          <div class="carousel-item <%= 'active' if index == 0 %>">
+            <%= cl_image_tag(photo.key, class: "d-block w-100") %>
           </div>
           <% end %>
           <% else %>
@@ -38,7 +38,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row mt-4">
     <div class="col-sm-12 col-md-6">
       <!-- Booking -->
       <div class="booking form-header">
@@ -53,32 +53,34 @@
         data-markers="<%= @marker.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-      </div>
+    </div>
 
-   </div>
   </div>
+</div>
 
 <!-- Review cards -->
 
 <div class="reviews mt-4">
   <h3 class="text-center"><strong>Popular reviews</strong></h3>
-  <% @outfit.reviews do |review| %>
-    <div class="card">
-      <div class="card-body">
-        <blockquote class="blockquote mb-0">
-          <p><%= review.content %></p>
-          <footer class="blockquote-footer"><%= review.user %></footer>
-        </blockquote>
-      </div>
-      <div class="card-rating">
-        <%= review.rating %>
-      </div>
-    </div>
-  <% end %>
-</div>
+  <div class="review-box d-flex justify-content-center mt-4">
+  <% @outfit.reviews.each do |review| %>
+<div class="card-product mr-4">
+  <%= image_tag('dress 4.jpg') %>
+  <div class="card-product-infos">
+    <h2><%= review.user.full_name %></h2>
+    <p> <%= review.content %> </p>
+    <span><% review.rating.times do %>
+      <i class="fas fa-star gold"></i>
+      <% end %>
+    </span>
+  </div>
 </div>
 
 
+<% end %>
+</div>
+</div>
+</div>
 
 
 
