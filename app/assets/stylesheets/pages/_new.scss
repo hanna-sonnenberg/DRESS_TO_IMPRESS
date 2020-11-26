@@ -1,5 +1,26 @@
 .form-group {
-  padding: 10px;
-  margin: 0;
+  // padding: 10px;
+  // margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
+.image-review {
+  width: 350px;
+  height: 350px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+
+.row {
+  margin-top: 50px;
+}
+
+
+.form-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 50px;
+  height: 600px;
+}
