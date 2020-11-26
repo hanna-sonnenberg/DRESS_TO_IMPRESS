@@ -50,7 +50,7 @@
           <p class="card-text"> Adress: <%= booking.address %></p>
           <p class="card-text"> Start Date: <%= booking.start_date %></p>
           <p class="card-text"> End Date: <%= booking.end_date %></p>
-          <%#= link_to "Add a Review", outfit_reviews_path(@outfit), class: 'btn-ghost btn-margin' %>
+          <%= link_to "Add a Review", new_outfit_review_path(booking.outfit), class: 'btn-ghost btn-margin' %>
         </div>
       </div>
       <% end %>
@@ -61,11 +61,10 @@
 
 
 
-<!-- <h2>Reviews for Bookings</h2>
+<h2>Reviews for Bookings</h2>
 <div class="d-flex flex-wrap justify-content-center">
-  <%# @user.bookings.each do |booking| %>
+  <%#@user.bookings.each do |booking| %>
     <%#= booking %>
     <%#= render 'reviews/form', outfit: booking.outfit, review: Review.new %>
   <%# end %>
 </div>
- -->
