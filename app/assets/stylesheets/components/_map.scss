@@ -22,3 +22,8 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+@media (max-width: 700px) {
+  .map-container {
+    display: none;
+  }
+}
