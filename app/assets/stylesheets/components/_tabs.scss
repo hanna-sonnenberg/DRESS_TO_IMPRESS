@@ -1,0 +1,40 @@
+/* Style the tab */
+.tabs-underlined {
+  display: flex;
+  align-items: center;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tablinks {
+  color: black;
+  padding: 8px;
+  margin: 8px 16px;
+  opacity: .4;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 4px solid transparent;
+}
+
+/* Change background color of buttons on hover */
+.tablinks:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tablinks.active {
+  opacity: 1;
+  border-bottom: 3px solid #555555;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+}
+
+.tabcontent-initial {
+  display: block;
+}
+
+
+

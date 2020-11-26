@@ -1,15 +1,14 @@
 <div class="container-fluid">
   <h1>Welcome <%= @user.first_name %></h1>
 
-
   <!-- Tab links -->
-  <div class="tab">
-    <button class="tablinks" onclick="openTab(event, 'Outfits')">Outfts</button>
-    <button class="tablinks" onclick="openTab(event, 'Bookings')">Bookings</button>
+  <div class="tabs-underlined">
+    <button id="tab-outfits" class="tablinks" onclick="openTab(event, 'Outfits')" >Outfits</button>
+    <button id="tab-bookings" class="tablinks" onclick="openTab(event, 'Bookings')" >Bookings</button>
   </div>
 
   <!-- Tab content -->
-  <div id="Outfits" class="tabcontent">
+  <div id="Outfits" class="tabcontent-initial tabcontent">
     <div class="card-container">
       <% @user.outfits.each do |outfit| %>
       <div class="card" style="">
@@ -61,10 +60,10 @@
 
 
 
-<h2>Reviews for Bookings</h2>
+<!-- <h2>Reviews for Bookings</h2>
 <div class="d-flex flex-wrap justify-content-center">
   <%#@user.bookings.each do |booking| %>
     <%#= booking %>
     <%#= render 'reviews/form', outfit: booking.outfit, review: Review.new %>
   <%# end %>
-</div>
+</div> -->
