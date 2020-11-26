@@ -6,7 +6,11 @@
         <% @outfits.each do |outfit| %>
         <%= link_to outfit_path(outfit) do %>
         <div class="card-trip">
-          <%= image_tag('pict.jpg', class: 'card-img-top rounded-top') %>
+          <% if outfit.photos.attached? %>
+            <%= cl_image_tag(outfit.photos[0].key, class: 'card-img-top rounded-top') %>
+          <% else %>
+            <%= image_tag('banner_image.jpg', class: 'card-img-top rounded-top') %>
+          <% end %>
           <div class="card-trip-infos">
             <div>
               <h2><%= outfit.name %></h2>
