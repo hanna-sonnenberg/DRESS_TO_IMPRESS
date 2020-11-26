@@ -16,6 +16,22 @@
 .btn-margin {
   margin-top: 35px;
 }
+
+.btn-review {
+  color: white;
+  background-color: #C7B2A7;
+  border: 1px solid #C7B2A7;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  font-size: 14px;
+
+  &:hover {
+    opacity: 0.8;
+    color: white;
+  }
+}
+
 .search {
   opacity: 0.6;
   color: #C7B2A7;
