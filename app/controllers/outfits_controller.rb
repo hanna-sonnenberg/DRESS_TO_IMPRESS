@@ -3,8 +3,20 @@ class OutfitsController < ApplicationController
   before_action :set_outfit, only: [:show, :delete, :edit, :update, :destroy]
 
   def index
-    @outfits = Outfit.where(category: params[:category])
-    @category = params[:category]
+    if params[:query].present?
+      sql_query = " \
+        outfits.name @@ :query \
+        OR outfits.description @@ :query \
+        OR users.first_name @@ :query \
+        OR users.last_name @@ :query \
+      "
+      @outfits = Outfit.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+    elsif params[:category].present?
+      @outfits = Outfit.where(category: params[:category])
+      @category = params[:category]
+    else
+      @outfits = Outfit.all
+    end
 
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = @outfits.geocoded.map do |outfit|
