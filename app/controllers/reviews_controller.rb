@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
   before_action :set_outfit, only: [:create]
 
   def new
-    @outfit = Outfit.new.find(params[:outft_id])
+    @outfit = Outfit.find(params[:outfit_id])
     @review = Review.new
   end
 

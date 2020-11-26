@@ -1,3 +1,81 @@
+.headline {
+  margin-top: 50px;
+  text-align: center;
+}
+
+
 .card-container {
-  width: 500px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  width: 350px;
+  margin-bottom: 50px;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.card-title {
+  text-align: center;
+}
+
+.padding-title {
+  padding: 10px 0;
+}
+
+.card-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #C7B2A7;
+  padding: 10px;
+}
+
+.link-icon {
+  color: white;
+}
+
+
+.outfit-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.adress-row {
+  text-align: center;
+}
+
+.date-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.link-icon-rosa {
+  color: #C7B2A7;
+  padding-left: 10px;
+}
+
+.btn {
+  background-color:#C7B2A7;
+  color: white;
+  margin: 10px 0;
+
+  &:hover {
+    opacity: 0.8;
+    color: white;
+  }
+}
+
+.btn-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }

@@ -1,69 +1,82 @@
 <div class="container-fluid">
-  <h1>Welcome <%= @user.first_name %></h1>
-
+  <h1 class="headline"> Welcome
+    <%= @user.first_name %>
+  </h1>
   <!-- Tab links -->
   <div class="tabs-underlined">
-    <button id="tab-outfits" class="tablinks" onclick="openTab(event, 'Outfits')" >Outfits</button>
-    <button id="tab-bookings" class="tablinks" onclick="openTab(event, 'Bookings')" >Bookings</button>
+    <button id="tab-outfits" class="tablinks" onclick="openTab(event, 'Outfits')">Outfits</button>
+    <button id="tab-bookings" class="tablinks" onclick="openTab(event, 'Bookings')">Bookings</button>
   </div>
-
   <!-- Tab content -->
   <div id="Outfits" class="tabcontent-initial tabcontent">
     <div class="card-container">
       <% @user.outfits.each do |outfit| %>
-      <div class="card" style="">
+      <div class="card">
         <% if outfit.photos.attached? %>
-        <%= cl_image_tag(outfit.photos[0].key, class: 'card-img-top rounded-top') %>
+        <%= cl_image_tag(outfit.photos[0].key, class: 'card-img-top') %>
         <% else %>
-        <%= image_tag('banner_image.jpg', class: 'card-img-top rounded-top') %>
+        <%= image_tag('banner_image.jpg', class: 'card-img-top') %>
         <% end %>
         <%#= image_tag('banner_image.jpg', class: 'card-img-top rounded-top') %>
         <%#= outfit.photos %>
         <%#= cl_image_tag(outfit.photo.key, class: 'card-img-top rounded-top') %>
         <div class="card-body">
-          <h4 class="card-title"><%= outfit.name.capitalize %></h4>
-          <%= link_to outfit do %>
-          <i class="far fa-eye"></i>
-          <% end %>
-          <%= link_to edit_outfit_path(outfit) do %>
-          <i class="fas fa-pencil-alt"></i>
-          <% end %>
-          <%= link_to  outfit_path(outfit),
-          method: :delete,
-          data: { confirm: "Are you sure?" } do %>
-          <i class="fas fa-trash"></i>
+          <h4 class="card-title padding-title">
+            <%= outfit.name.capitalize %>
+          </h4>
+          <div class="card-links">
+            <%= link_to outfit do %>
+            <i class="far fa-eye link-icon"></i>
+            <% end %>
+            <%= link_to edit_outfit_path(outfit) do %>
+            <i class="fas fa-pencil-alt link-icon"></i>
+            <% end %>
+            <%= link_to  outfit_path(outfit),
+            method: :delete,
+            data: { confirm: "Are you sure?" } do %>
+            <i class="fas fa-trash link-icon"></i>
+          </div>
           <% end %>
         </div>
       </div>
       <% end %>
     </div>
   </div>
-
   <div id="Bookings" class="tabcontent">
-    <h2>Bookings:</h2>
-    <div class="">
+    <div class="card-container">
       <% @user.bookings.each do |booking| %>
-      <div class="card" style="width: 18rem;">
+      <div class="card">
         <div class="card-body">
-          <h5 class="card-title"><%= link_to "outfit", outfit_path(booking.outfit) %></h5>
-          <p class="card-text"> Adress: <%= booking.address %></p>
-          <p class="card-text"> Start Date: <%= booking.start_date %></p>
-          <p class="card-text"> End Date: <%= booking.end_date %></p>
-          <%= link_to "Add a Review", new_outfit_review_path(booking.outfit), class: 'btn-ghost btn-margin' %>
+          <h5 class="card-title">
+            <% if booking.outfit.photos.attached? %>
+              <%= cl_image_tag(booking.outfit.photos[0].key, class: 'card-img-top') %>
+            <% else %>
+              <%= image_tag('banner_image.jpg', class: 'card-img-top') %>
+            <% end %>
+            <div class="outfit-link">
+              <%= booking.outfit.name.capitalize %>
+              <%= link_to outfit_path(booking.outfit) do %>
+              <i class="far fa-eye link-icon-rosa"></i>
+              <% end %>
+            </div>
+          </h5>
+          <p class="card-text adress-row">
+            <%= booking.address %>
+          </p>
+          <div class="date-row">
+            <p class="card-text">
+              <%= booking.start_date %>
+            </p>
+            <p class="card-text"> -
+              <%= booking.end_date %>
+            </p>
+          </div>
+          <div class="btn-row">
+            <%= link_to "Add a Review", new_outfit_review_path(booking.outfit), class: 'btn' %>
+          </div>
         </div>
       </div>
       <% end %>
     </div>
   </div>
 </div>
-
-
-
-
-<!-- <h2>Reviews for Bookings</h2>
-<div class="d-flex flex-wrap justify-content-center">
-  <%#@user.bookings.each do |booking| %>
-    <%#= booking %>
-    <%#= render 'reviews/form', outfit: booking.outfit, review: Review.new %>
-  <%# end %>
-</div> -->
