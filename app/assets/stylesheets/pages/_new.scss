@@ -1,5 +1,11 @@
 .form-group {
-  padding: 10px;
-  margin: 0;
+  // padding: 10px;
+  // margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
+.image-review {
+  width: 500px;
+  height: 500px;
+}

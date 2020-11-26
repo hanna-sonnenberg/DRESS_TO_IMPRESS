@@ -5,15 +5,15 @@
       <div id="carousel-outfit" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <% if @outfit.photos.attached? %>
-          <% @outfit.photos.each do |photo| %>
-          <div class="carousel-item active">
-            <%= cl_image_tag(@outfit.photo.key, class: "d-block w-100") %>
-          </div>
-          <% end %>
+            <% @outfit.photos.each do |photo| %>
+              <div class="carousel-item active">
+                <%= cl_image_tag(photo.key, class: "d-block w-100") %>
+              </div>
+            <% end %>
           <% else %>
-          <div class="carousel-item active">
-            <%= image_tag('picture1.jpg', class: "d-block w-100") %>
-          </div>
+            <div class="carousel-item active">
+              <%= image_tag('picture1.jpg', class: "d-block w-100") %>
+            </div>
           <% end %>
         </div>
         <a class="carousel-control-prev" href="#carousel-outfit" role="button" data-slide="prev">
