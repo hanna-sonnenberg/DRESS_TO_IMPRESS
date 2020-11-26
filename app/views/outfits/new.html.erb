@@ -1,13 +1,13 @@
 
-<div class="container-fluid" style="padding:0">
-  <div class="banner d-flex flex-column align-items-center" style="padding: 100px 0">
-    <div class="navbar">
-    </div>
-    <div class="logo-banner-image">
+<div class="container">
+  <div class="row">
+
+  <div class="aside d-flex flex-column align-items-center col-4">
+    <div class="logo-banner-image small">
       <img src="../assets/logo_banner_image.png">
     </div>
   </div>
-  <div class="d-flex flex-row align-items-center">
+  <div class="d-flex flex-row align-items-center col-6">
     <div class="form-background w-100 d-flex flex-column align-items-center">
       <div class="form-group">
         <%= simple_form_for(@outfit) do |f| %>
@@ -17,13 +17,15 @@
         <%= f.input :price %>
         <%= f.input :category, :collection => ["gala", "christmas", "carnaval", "halloween", "new year"] %>
         <%= f.input :description %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
+        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
         <%= f.input :location %>
         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.submit "Create new Outfit", class: "btn-margin btn-ghost" %>
         <% end %>
       </div>
     </div>
+  </div>
+
   </div>
 </div>
