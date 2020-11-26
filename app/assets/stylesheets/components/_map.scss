@@ -4,6 +4,13 @@
   position: sticky;
   right: 0;
 }
+
+.map-small {
+  width: 100%;
+  margin: 0 auto;
+  height: 415px;
+}
+
 .mapboxgl-popup {
   max-width: 200px;
 }
