@@ -20,6 +20,14 @@ class OutfitsController < ApplicationController
   def show
     @review = Review.new
     @booking = Booking.new
+    @marker =
+      [{
+        lat: @outfit.latitude,
+        lng: @outfit.longitude,
+        image_url: helpers.image_url('marker2.png')
+      }]
+    # sum_ratings = @outfit.review.sum
+    # @average = sum_ratings / @outfit.reviews.length
   end
 
   def new
@@ -60,6 +68,8 @@ class OutfitsController < ApplicationController
     end
 
     def outfit_params
-      params.require(:outfit).permit(:name, :size, :gender, :price, :category, :location, :start_date, :end_date, photos: [])
+
+      params.require(:outfit).permit(:name, :size, :gender, :price, :category, :location, :start_date, :end_date, :description, photos: [])
+
     end
 end
