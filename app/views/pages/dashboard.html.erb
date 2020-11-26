@@ -1,59 +1,71 @@
 <div class="container-fluid">
-
   <h1>Welcome <%= @user.first_name %></h1>
 
-  <h2>Outfits</h2>
 
-  <div class="card-container">
-    <% @user.outfits.each do |outfit| %>
-    <div class="card" style="">
-      <% if outfit.photos.attached? %>
+  <!-- Tab links -->
+  <div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'Outfits')">Outfts</button>
+    <button class="tablinks" onclick="openTab(event, 'Bookings')">Bookings</button>
+  </div>
+
+  <!-- Tab content -->
+  <div id="Outfits" class="tabcontent">
+    <div class="card-container">
+      <% @user.outfits.each do |outfit| %>
+      <div class="card" style="">
+        <% if outfit.photos.attached? %>
         <%= cl_image_tag(outfit.photos[0].key, class: 'card-img-top rounded-top') %>
-      <% else %>
+        <% else %>
         <%= image_tag('banner_image.jpg', class: 'card-img-top rounded-top') %>
+        <% end %>
+        <%#= image_tag('banner_image.jpg', class: 'card-img-top rounded-top') %>
+        <%#= outfit.photos %>
+        <%#= cl_image_tag(outfit.photo.key, class: 'card-img-top rounded-top') %>
+        <div class="card-body">
+          <h4 class="card-title"><%= outfit.name.capitalize %></h4>
+          <%= link_to outfit do %>
+          <i class="far fa-eye"></i>
+          <% end %>
+          <%= link_to edit_outfit_path(outfit) do %>
+          <i class="fas fa-pencil-alt"></i>
+          <% end %>
+          <%= link_to  outfit_path(outfit),
+          method: :delete,
+          data: { confirm: "Are you sure?" } do %>
+          <i class="fas fa-trash"></i>
+          <% end %>
+        </div>
+      </div>
       <% end %>
-      <%#= image_tag('banner_image.jpg', class: 'card-img-top rounded-top') %>
-      <%#= outfit.photos %>
-      <%#= cl_image_tag(outfit.photo.key, class: 'card-img-top rounded-top') %>
-      <div class="card-body">
-        <h4 class="card-title"><%= outfit.name.capitalize %></h4>
-        <%= link_to outfit do %>
-        <i class="far fa-eye"></i>
-        <% end %>
-        <%= link_to edit_outfit_path(outfit) do %>
-        <i class="fas fa-pencil-alt"></i>
-        <% end %>
-        <%= link_to  outfit_path(outfit),
-        method: :delete,
-        data: { confirm: "Are you sure?" } do %>
-        <i class="fas fa-trash"></i>
-        <% end %>
-      </div>
     </div>
-    <% end %>
   </div>
 
-  <h2>Bookings:</h2>
-  <div class="">
-    <% @user.bookings.each do |booking| %>
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-
-        <h5 class="card-title"><%= link_to "outfit", outfit_path(booking.outfit) %></h5>
-        <p class="card-text"> Adress: <%= booking.address %></p>
-        <p class="card-text"> Start Date: <%= booking.start_date %></p>
-        <p class="card-text"> End Date: <%= booking.end_date %></p>
+  <div id="Bookings" class="tabcontent">
+    <h2>Bookings:</h2>
+    <div class="">
+      <% @user.bookings.each do |booking| %>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to "outfit", outfit_path(booking.outfit) %></h5>
+          <p class="card-text"> Adress: <%= booking.address %></p>
+          <p class="card-text"> Start Date: <%= booking.start_date %></p>
+          <p class="card-text"> End Date: <%= booking.end_date %></p>
+          <%#= link_to "Add a Review", outfit_reviews_path(@outfit), class: 'btn-ghost btn-margin' %>
+        </div>
       </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
 </div>
 
-<h2>Reviews for Bookings</h2>
+
+
+
+<!-- <h2>Reviews for Bookings</h2>
 <div class="d-flex flex-wrap justify-content-center">
-  <% @user.bookings.each do |booking| %>
-    <%= booking %>
-    <%= render 'reviews/form', outfit: booking.outfit, review: Review.new %>
-  <% end %>
+  <%# @user.bookings.each do |booking| %>
+    <%#= booking %>
+    <%#= render 'reviews/form', outfit: booking.outfit, review: Review.new %>
+  <%# end %>
 </div>
-
+ -->
