@@ -1,33 +1,39 @@
-
 <nav class="navbar navbar-expand-md fixed-top">
-  <div class="dropdown">
-    <button class="dropbtn">REGISTER</button>
-    <div class="dropdown-content">
-      <% if user_signed_in? %>
-      <%= link_to "Log Out",  destroy_user_session_path, method: :delete %>
-      <% else %>
-      <%= link_to "REGISTER", new_user_registration_path %>
-      <%= link_to "LOG IN", user_session_path %>
-      <% end %>
-    </div>
+  <div class="logo-navbar">
+      <img src="../assets/logo-small2.jpg">
   </div>
+
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
-      <button class="dropbtn">
-        <li class="nav-item active">
-          <%= link_to 'HOME', root_path, class: "nav-link" %>
-        </li>
+      <button class="navbtn">
+        <li class="nav-item active"><%= link_to 'HOME', root_path, class: "nav-link" %></li>
       </button>
-      <button class="dropbtn">
-        <li class="nav-item">
-          <%= link_to 'DASHBOARD', dashboard_path, class: "nav-link" %>
-        </li>
+
+      <button class="navbtn">
+        <li class="nav-item"><%= link_to 'DASHBOARD', dashboard_path, class: "nav-link" %></li>
       </button>
+
+      <button class="navbtn">
+        <li class="nav-item"><%= link_to 'CREATE OUTFIT', new_outfit_path, class: "nav-link" %></li>
+      </button>
+
+      <div class="dropdown">
+        <button class="navbtn">REGISTER</button>
+        <div class="dropdown-content">
+          <% if user_signed_in? %>
+            <%= link_to "LOG OUT",  destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to "REGISTER", new_user_registration_path %>
+            <%= link_to "LOG IN", user_session_path %>
+          <% end %>
+        </div>
+      </div>
     </ul>
-    <form class="form mt-2 mt-md-0" action="" method="get">
+
+    <!-- <form class="form mt-2 mt-md-0" action="" method="get">
       <input  class="form-control mr-sm-2" name="search" type="text" placeholder="..." aria-label="Search">
       <button class="search pt-2" type="submit">SEARCH</button>
-      <%= link_to 'CREATE OUTFIT', new_outfit_path, class: "nav-link ml-4" %>
-    </form>
+    </form> -->
+      <%= render 'outfits/search' %>
   </div>
 </nav>
