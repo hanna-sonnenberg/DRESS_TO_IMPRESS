@@ -1,115 +1,84 @@
 <div class="container">
-  <h1>NAVBAR WILL COME HERE</h1>
-  <h1>All outfits for: <%= @outfit.category %></h1>
-    <div class="row grid-row">
-      <div class="col grid-col">
-        <p> Outfit image 1 </p>
+  <h1 class="text-center mb-4"><%= @outfit.name.capitalize %></h1>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <div id="carousel-outfit" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <% if @outfit.photos.attached? %>
+          <% @outfit.photos.each do |photo| %>
+          <div class="carousel-item active">
+            <%= cl_image_tag(@outfit.photo.key, class: "d-block w-100") %>
+          </div>
+          <% end %>
+          <% else %>
+          <div class="carousel-item active">
+            <%= image_tag('picture1.jpg', class: "d-block w-100") %>
+          </div>
+          <% end %>
+        </div>
+        <a class="carousel-control-prev" href="#carousel-outfit" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-outfit" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
     </div>
-
-    <div class="row grid-row">
-      <div class="col-md-8 col-sm-6 grid-col">
-        <p> Outfit image 2 </p>
-      </div>
-      <div class="col-md-4 col-sm-6 grid-col">
-        <p> Outfit image 3 </p>
-      <div class="row">
-        <div class="col-5 ">
-          <p> Outfit image 1 </p>
-        </div>
-
-
-      <div class="col-7">
-        <div class="col-md-8 col-sm-6">
-          <p> Outfit image 2 </p>
-        </div>
-        <div class="col-md-4 col-sm-6">
-          <p> Outfit image 3 </p>
-        </div>
-      </div>
-      </div>
-
-
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-8">
-        <h1> <%= @outfit.name %></h1>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
+    <div class="col-sm-12 col-md-6">
+      <div class="outfit-info">
         <h3> Product description </h3>
         <p> <%= @outfit.description %></p>
-      </div>
-    </div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col-8">
-      <h1> <%= @outfit.name %></h1>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-      <p> Outfit description </p>
-    </div>
-  <div class="row">
-    <div class="col-md-12 col-sm-12">
-      <!-- Booking -->
-      <div class="booking form-header">
-      <h4></i> <strong class="text-center">Book for <%= @outfit.name %> </strong></h4>
-      <%= render 'bookings/form', outfit: @outfit, booking: @booking %>
-      </div>
-    </div>
-</div>
-
-  <!-- Review cards -->
-<div class="container">
-  <div class="row">
-    <div class="col-4">
-       <div class="card">
-        <div class="card-header">
-          Review
-        </div>
-        <div class="card-body">
-          <blockquote class="blockquote mb-0">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer class="blockquote-footer">John Doe </footer>
-          </blockquote>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-       <div class="card">
-        <div class="card-header">
-          Review
-        </div>
-        <div class="card-body">
-          <blockquote class="blockquote mb-0">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer class="blockquote-footer">John Doe </footer>
-          </blockquote>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-       <div class="card">
-        <div class="card-header">
-          Review
-        </div>
-        <div class="card-body">
-          <blockquote class="blockquote mb-0">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer class="blockquote-footer">John Doe </footer>
-          </blockquote>
-        </div>
+        <span><strong>Rating</strong>: <%# @average.times do %>
+          <i class="fas fa-star gold"></i>
+          <%# end %>
+        </span>
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <!-- Booking -->
+      <div class="booking form-header">
+        <h4><strong class="text-center">Book for <%= @outfit.name.capitalize %> </strong></h4>
+        <%= render 'bookings/form', outfit: @outfit, booking: @booking %>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <!-- Map -->
+      <div class="map-container">
+        <div id="map" class="map-small"
+        data-markers="<%= @marker.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+      </div>
+
+   </div>
+  </div>
+
+<!-- Review cards -->
+
+<div class="reviews mt-4">
+  <h3 class="text-center"><strong>Popular reviews</strong></h3>
+  <% @outfit.reviews do |review| %>
+    <div class="card">
+      <div class="card-body">
+        <blockquote class="blockquote mb-0">
+          <p><%= review.content %></p>
+          <footer class="blockquote-footer"><%= review.user %></footer>
+        </blockquote>
+      </div>
+      <div class="card-rating">
+        <%= review.rating %>
+      </div>
+    </div>
+  <% end %>
 </div>
+</div>
+
+
 
 
 

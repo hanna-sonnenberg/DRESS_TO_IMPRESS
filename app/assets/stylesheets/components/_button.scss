@@ -31,3 +31,13 @@
     color: white;
   }
 }
+
+.search {
+  opacity: 0.6;
+  color: #C7B2A7;
+
+  &:hover {
+    opacity: 0.9;
+    transition: 0.3s;
+  }
+}
