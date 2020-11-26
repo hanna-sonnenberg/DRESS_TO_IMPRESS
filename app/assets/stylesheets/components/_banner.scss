@@ -51,3 +51,15 @@
         transform: rotate(45deg) translate(20px,20px);
     }
 }
+
+.aside {
+  position: sticky;
+  top: 0;
+  padding: 100px 0;
+  height: 100vh;
+  background-image: linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.3)), image-url('banner_image.jpg');
+}
+.small {
+  width: 300px;
+  margin: 50% auto;
+}

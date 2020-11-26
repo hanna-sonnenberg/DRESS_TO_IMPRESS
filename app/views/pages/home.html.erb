@@ -22,14 +22,14 @@
   <div class="container-categories">
     <div class="categories d-flex flex-row flex-wrap justify-content-flex-start">
       <div class="d-flex flex-column mb-4 mb-md-4">
-        <%= link_to outfits_path(:category => "Gala"), id: "category-title" do %>
+        <%= link_to outfits_path(:category => "gala"), id: "category-title" do %>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'picture1.jpeg' %>);">
          GALA
         </div>
         <% end %>
       </div>
 
-      <div class="d-flex flex-column mb-4 mb-md-4">
+       <div class="d-flex flex-column mb-4 mb-md-4">
         <%= link_to outfits_path(:category => "christmas"), id: "category-title" do %>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'picture2.jpeg' %>);">
          CHRISTMAS
@@ -57,6 +57,14 @@
         <%= link_to outfits_path(:category => "carnaval"), id: "category-title" do %>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'picture5.jpeg' %>);">
          CARNAVAL
+        </div>
+        <% end %>
+      </div>
+
+      <div class="d-flex flex-column mb-4 mb-md-4">
+        <%= link_to outfits_path(:category => "wedding"), id: "category-title" do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'picture5.jpeg' %>);">
+         WEDDING
         </div>
         <% end %>
       </div>

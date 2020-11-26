@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :outfits do
     resources :bookings, only: [:create]
-    resources :reviews, only: [:create]
+    resources :reviews, only: [:new, :create]
   end
 
   get "dashboard", to: "pages#dashboard", as: :dashboard

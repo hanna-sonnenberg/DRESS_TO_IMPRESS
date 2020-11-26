@@ -8,3 +8,14 @@
 @import "banner";
 @import "button";
 @import "footer";
+@import "tabs";
+
+body {
+  padding-top: 70px;
+}
+a {
+ text-decoration: none;
+ &:hover {
+text-decoration: none;
+ }
+}
