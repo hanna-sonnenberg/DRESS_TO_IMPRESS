@@ -20,8 +20,8 @@
         <%= f.input :start_date %>
         <%= f.input :end_date %>
         <%= f.input :location %>
-        <%= f.input :photo, as: :file %>
-        <%= f.submit "Edit", class: "btn-margin btn-ghost" %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.submit "Save", class: "btn-margin btn-ghost" %>
         <% end %>
       </div>
     </div>
