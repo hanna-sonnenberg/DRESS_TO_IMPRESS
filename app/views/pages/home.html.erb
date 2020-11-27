@@ -13,10 +13,11 @@
 
 <!-- container section -->
 <!-- set width in container -->
+<div class="container">
 
 <h2 class="text-center mb-4">CATEGORIES</h2>
-<div class="container-categories">
-  <div class="categories d-flex flex-row flex-wrap justify-content-flex-start">
+
+  <div class="categories d-flex flex-wrap justify-content-center">
     <div class="d-flex flex-column mb-4 mb-md-4">
       <%= link_to outfits_path(:category => "gala"), id: "category-title" do %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'picture1.jpeg' %>);">
@@ -64,9 +65,10 @@
       </div>
       <% end %>
     </div>
+  </div>
 
   <h2 class="text-center mb-4">RECENT BOOKED</h2>
-  <div class="d-flex flex-wrap">
+  <div class="d-flex flex-wrap justify-content-center">
     <% @recent_bookings.each_with_index do |booking, index| %>
     <%= link_to outfit_path(:id => booking[:outfit_id]) do %>
     <div class="card-trip">
@@ -78,6 +80,6 @@
     </div>
     <% end %>
     <% end %>
-        </div>
-</div>
+   </div>
 
+</div>
