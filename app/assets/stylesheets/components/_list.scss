@@ -1,0 +1,16 @@
+.info-list-out {
+  list-style-type: none;
+  padding: 0;
+}
+.info-list-out li {
+  margin-bottom: 1rem;
+}
+
+  .info-list-out i {
+    color: #646061;
+    font-size: 20px;
+    &:hover {
+      font-size: 25px;
+      transition: 0.3s;
+    }
+}

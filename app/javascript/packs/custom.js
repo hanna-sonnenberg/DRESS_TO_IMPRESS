@@ -19,4 +19,4 @@ window.openTab = (event, tabName) => {
   event.currentTarget.className += " active";
 }
 
-console.log("custom js file loaded")
+//console.log("custom js file loaded")
