@@ -1,0 +1,23 @@
+.header-description {
+  color: #C7B2A7;
+  margin: 0;
+  margin-top: 70px;
+  text-decoration: underline;
+  font-size: 40px;
+  text-align: center;
+}
+
+// shorten the text if the description gets too long
+.outfit-description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 25ch;
+}
+
+
+@media (max-width: 700px) {
+  .card-container {
+    width: 100%;
+  }
+}
