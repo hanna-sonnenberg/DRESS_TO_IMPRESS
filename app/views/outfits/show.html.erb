@@ -30,7 +30,12 @@
     </div>
     <div class="col-sm-12 col-md-6">
       <div class="outfit-info">
-        <h3> Product description </h3>
+        <h3> <%= @outfit.name %> </h3>
+        <ul>
+          <li><%= @outfit.category.capitalize %></li>
+          <li><%= @outfit.size %></li>
+          <li><%= @outfit.price %> €</li>
+        </ul>
         <p> <%= @outfit.description %></p>
          <% if @average %>
         <span><strong>Rating</strong>: <% @average.times do %>
