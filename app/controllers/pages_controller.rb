@@ -3,10 +3,12 @@ class PagesController < ApplicationController
 
   def home
     @user = current_user
-    #@recent_bookings = Booking.order
-    @array_outfit = @user.bookings.map do |book|
-      book[:outfit_id]
-      end
+    @recent_bookings = Booking.order(created_at: :desc).take(3)
+    @outfits = []
+    @recent_bookings.each do |booking|
+      @outfits << Outfit.find(booking[:outfit_id])
+    end
+    
   end
 
   def dashboard

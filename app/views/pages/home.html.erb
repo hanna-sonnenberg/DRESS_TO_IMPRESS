@@ -71,14 +71,17 @@
     </div>
   </div>
 
-<h2 class="text-center mb-4">RECENT BOOKED</h2>
-<div class="d-flex flex-wrap">
-        <% @array_outfit.each do |id| %>
-        <%= link_to outfit_path(:id => id) do %>
-        <div class="card-trip">
-          <%= image_tag('dress 2.jpg', class: 'card-img-top rounded-top') %>
+  <h2 class="text-center mb-4">RECENT BOOKED</h2>
+  <div class="d-flex flex-wrap">
+    <% @recent_bookings.each_with_index do |booking, index| %>
+    <%= link_to outfit_path(:id => booking[:outfit_id]) do %>
+    <div class="card-trip">
+      <% if @outfits[index].photos.attached? %>
+        <%= cl_image_tag @outfits[index].photos[0].key, class: 'card-img-top rounded-top' %>
+      <% else %>
+          <%= image_tag('banner_image.jpg', class: 'card-img-top') %>
+        <% end %>
+    </div>
+    <% end %>
+    <% end %>
         </div>
-        <% end %>
-        <% end %>
-      </div>
-
