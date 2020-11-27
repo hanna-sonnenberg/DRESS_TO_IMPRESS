@@ -6,8 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts "start time is #{Time.now}"
+Review.destroy_all
+Booking.destroy_all
 Outfit.destroy_all
 User.destroy_all
+
 
 User.create!(last_name: "Kap", first_name: "Kelly", password: 123456, email: "dghj@jkhdj.com")
 User.create!(last_name: "Sonnenberg", first_name: "Hanna", password: 345677, email: "abl@hshjnn.com")
@@ -20,6 +24,7 @@ SIZES = ["xs", "s", "m", "l", "xl"]
 CATEGORY = ["halloween", "new year", "christmas", "carnaval", "gala"]
 LOCATION = ["delft", "amsterdam", "berlin", "hague", "paris"]
 NAME = ["name", "reach", "extra", "Go outside", "Night"]
+COMMENTS = ["gray dress", "very beautiful", "nice"]
 
 User.all.each do |user|
   10.times do
@@ -38,8 +43,29 @@ User.all.each do |user|
   end
 end
 
+Outfit.all.each do |outfit|
+    Booking.create(
+      address: LOCATION.sample,
+      user: User.all.sample,
+      outfit: outfit,
+      start_date: Date.new(2020,5,23),
+      end_date: Date.new(2020,5,24),
+      )
+
+    5.times do
+      Review.create(
+        content: COMMENTS.sample,
+        outfit: outfit,
+        rating: rand(1..5),
+        user: User.all.sample
+        )
+    end
+end
+
+
 puts "#{Outfit.count} new outfits created"
+puts "#{Booking.count} new bookings created"
 puts "#{User.count} new user created"
+puts "#{Review.count} new review created"
 
-
-
+puts "end time is #{Time.now}"
