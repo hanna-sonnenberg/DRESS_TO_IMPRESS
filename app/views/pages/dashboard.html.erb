@@ -13,9 +13,9 @@
       <% @user.outfits.each do |outfit| %>
       <div class="card" style="height: auto">
         <% if outfit.photos.attached? %>
-        <%= cl_image_tag(outfit.photos[0].key, width: 350, height: 300, crop: :fill, class: 'card-img-top rounded') %>
+        <%= cl_image_tag(outfit.photos[0].key, width: 350, height: 250, crop: :fill, class: 'card-img-top rounded') %>
         <% else %>
-        <%= image_tag('banner_image.jpg', class: 'card-img-top rounded') %>
+        <%= image_tag('banner_image.jpg', width: 350, height: 250, crop: :fill, class: 'card-img-top rounded') %>
         <% end %>
         <%#= image_tag('banner_image.jpg', class: 'card-img-top rounded-top') %>
         <%#= outfit.photos %>
@@ -43,15 +43,15 @@
     </div>
   </div>
   <div id="Bookings" class="tabcontent">
-    <div class="card-container">
+    <div class="card-container-bookings">
       <% @user.bookings.each do |booking| %>
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">
             <% if booking.outfit.photos.attached? %>
-              <%= cl_image_tag(booking.outfit.photos[0].key, class: 'card-img-top') %>
+              <%= cl_image_tag(booking.outfit.photos[0].key, width: 350, height: 250, crop: :fill, class: 'card-img-top') %>
             <% else %>
-              <%= image_tag('banner_image.jpg', class: 'card-img-top') %>
+              <%= image_tag('banner_image.jpg', width: 350, height: 250, crop: :fill, class: 'card-img-top') %>
             <% end %>
             <div class="outfit-link">
               <%= booking.outfit.name.capitalize %>
@@ -63,12 +63,14 @@
           <p class="card-text adress-row">
             <%= booking.address %>
           </p>
-          <div class="date-row">
+          <div class="row-container d-flex flex-row">
+            <i class="far fa-calendar-times" style="padding-top: 3.5px"></i>
             <p class="card-text">
-              <%= booking.start_date %>
+              <%= booking.start_date.strftime("%d.%m.%Y") %>
             </p>
-            <p class="card-text"> -
-              <%= booking.end_date %>
+            <p>-</p>
+            <p class="card-text">
+              <%= booking.end_date.strftime("%d.%m.%Y") %>
             </p>
           </div>
           <div class="btn-row">

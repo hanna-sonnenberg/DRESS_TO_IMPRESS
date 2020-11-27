@@ -6,6 +6,9 @@
   text-decoration: underline;
 }
 
+.tablinks:focus {
+  outline: 0;
+}
 
 .card-container {
   display: flex;
@@ -19,7 +22,6 @@
 }
 
 .card-image-top {
-  height: 300px;
   object-fit: contain;
 }
 
@@ -46,6 +48,10 @@
 
 .link-icon {
   color: white;
+  &:hover {
+  color: #3F3A3C;
+  opacity: 0.6;
+  }
 }
 
 
@@ -60,15 +66,19 @@
   text-align: center;
 }
 
-.date-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
+// .date-row {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+// }
 
 .link-icon-rosa {
   color: #C7B2A7;
   padding-left: 10px;
+  &:hover {
+  color: #3F3A3C;
+  opacity: 0.6;
+  }
 }
 
 .btn {
@@ -87,3 +97,19 @@
   flex-direction: row;
   justify-content: center;
 }
+
+.row-container {
+  width: 100%;
+  justify-content: center;
+}
+
+.card-container-bookings {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 30px;
+}
+
+.card-text {
+  padding: 0 10px;
+}
+
