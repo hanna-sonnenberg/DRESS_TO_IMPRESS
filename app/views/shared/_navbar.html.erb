@@ -5,20 +5,20 @@
 
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
-      <button class="navbtn">
+      <button id="navbtn">
         <li class="nav-item active"><%= link_to 'HOME', root_path, class: "nav-link" %></li>
       </button>
 
-      <button class="navbtn">
+      <button id="navbtn">
         <li class="nav-item"><%= link_to 'DASHBOARD', dashboard_path, class: "nav-link" %></li>
       </button>
 
-      <button class="navbtn">
+      <button id="navbtn">
         <li class="nav-item"><%= link_to 'CREATE OUTFIT', new_outfit_path, class: "nav-link" %></li>
       </button>
 
       <div class="dropdown">
-        <button class="navbtn">REGISTER</button>
+        <button id="navbtn">REGISTER</button>
         <div class="dropdown-content">
           <% if user_signed_in? %>
             <%= link_to "LOG OUT",  destroy_user_session_path, method: :delete %>
@@ -29,11 +29,6 @@
         </div>
       </div>
     </ul>
-
-    <!-- <form class="form mt-2 mt-md-0" action="" method="get">
-      <input  class="form-control mr-sm-2" name="search" type="text" placeholder="..." aria-label="Search">
-      <button class="search pt-2" type="submit">SEARCH</button>
-    </form> -->
       <%= render 'outfits/search' %>
   </div>
 </nav>
