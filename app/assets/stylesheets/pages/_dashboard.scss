@@ -11,18 +11,23 @@
 }
 
 .card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
 }
 
-.card {
+.card-dash {
   width: 350px;
-  margin-bottom: 50px;
+  margin-bottom: 149px;
+
 }
 
 .card-image-top {
   object-fit: contain;
+  height: 70.8% !important;
 }
 
 
@@ -106,10 +111,15 @@
 .card-container-bookings {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 30px;
+  grid-column-gap: 5px;
 }
 
 .card-text {
   padding: 0 10px;
+}
+
+.card-dash-booking {
+  height: 410px;
+  width: 320px;
 }
 
