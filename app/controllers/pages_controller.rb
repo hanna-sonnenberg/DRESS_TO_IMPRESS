@@ -2,7 +2,11 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :index, :show]
 
   def home
-     # search
+    @user = current_user
+    #@recent_bookings = Booking.order
+    @array_outfit = @user.bookings.map do |book|
+      book[:outfit_id]
+      end
   end
 
   def dashboard
@@ -13,15 +17,6 @@ class PagesController < ApplicationController
      # @incoming_reviews = @user.incoming_reviews
      @bookings = @user.bookings
      # @incoming_bookings = @user.incoming_bookings
-  end
-
-  private
-
-  def search
-    # categories and dates
-    word = params["search"]
-    @outfits = Outfit.where("category ILIKE ?", "%#{word}%")
-
   end
 
 end

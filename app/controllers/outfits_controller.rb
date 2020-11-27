@@ -37,8 +37,9 @@ class OutfitsController < ApplicationController
         lng: @outfit.longitude,
         image_url: helpers.image_url('marker2.png')
       }]
-    # sum_ratings = @outfit.review.sum
-    # @average = sum_ratings / @outfit.reviews.length
+
+     @average = @outfit.reviews.average(:rating).to_i
+
   end
 
   def new
@@ -46,7 +47,6 @@ class OutfitsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update

@@ -4,10 +4,10 @@
           <img src="../assets/logo_banner_image.png">
         </div>
 
-        <form class="form mt-2 mt-md-0" action="" method="get" style= "position: absolute; top: 66%; left: 50%; transform: translate(-50%,-50%);">
+        <!-- <form class="form mt-2 mt-md-0" action="" method="get" style= "position: absolute; top: 66%; left: 50%; transform: translate(-50%,-50%);">
           <input  class="form-control" name="search" type="text" placeholder="enter an outfit idea" aria-label="Search">
           <button class="search" type="submit">SEARCH</button>
-        </form>
+        </form> -->
 
       <div class="arrow">
                 <span></span>
@@ -63,7 +63,7 @@
 
       <div class="d-flex flex-column mb-4 mb-md-4">
         <%= link_to outfits_path(:category => "wedding"), id: "category-title" do %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'picture5.jpeg' %>);">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'wedd.jpeg' %>);">
          WEDDING
         </div>
         <% end %>
@@ -71,6 +71,14 @@
     </div>
   </div>
 
-  <h2 class="text-center mb-4">REVIEWS</h2>
-
+<h2 class="text-center mb-4">RECENT BOOKED</h2>
+<div class="d-flex flex-wrap">
+        <% @array_outfit.each do |id| %>
+        <%= link_to outfit_path(:id => id) do %>
+        <div class="card-trip">
+          <%= image_tag('dress 2.jpg', class: 'card-img-top rounded-top') %>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
 

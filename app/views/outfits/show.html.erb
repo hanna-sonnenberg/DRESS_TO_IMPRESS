@@ -8,14 +8,14 @@
 
           <% @outfit.photos.each_with_index do |photo, index| %>
           <div class="carousel-item <%= 'active' if index == 0 %>">
-            <%= cl_image_tag(photo.key, class: "d-block w-100") %>
+            <%= cl_image_tag(photo.key, class: "d-block card-img-top") %>
           </div>
           <% end %>
 
           <% else %>
-            <div class="carousel-item active">
-              <%= image_tag('picture1.jpg', class: "d-block w-100") %>
-            </div>
+          <div class="carousel-item active">
+            <%= image_tag('picture1.jpg', class: "d-block w-100 card-img-top") %>
+          </div>
           <% end %>
         </div>
         <a class="carousel-control-prev" href="#carousel-outfit" role="button" data-slide="prev">
@@ -32,10 +32,12 @@
       <div class="outfit-info">
         <h3> Product description </h3>
         <p> <%= @outfit.description %></p>
-        <span><strong>Rating</strong>: <%# @average.times do %>
+         <% if @average %>
+        <span><strong>Rating</strong>: <% @average.times do %>
           <i class="fas fa-star gold"></i>
-          <%# end %>
+          <% end %>
         </span>
+        <% end %>
       </div>
     </div>
   </div>
@@ -63,24 +65,22 @@
 <!-- Review cards -->
 
 <div class="reviews mt-4">
-  <h3 class="text-center"><strong>Popular reviews</strong></h3>
-  <div class="review-box d-flex justify-content-center mt-4">
-  <% @outfit.reviews.each do |review| %>
-<div class="card-product mr-4">
-  <%= image_tag('dress 4.jpg') %>
-  <div class="card-product-infos">
-    <h2><%= review.user.full_name %></h2>
-    <p> <%= review.content %> </p>
-    <span><% review.rating.times do %>
-      <i class="fas fa-star gold"></i>
-      <% end %>
-    </span>
+  <h3 class="text-center"><strong>Reviews</strong></h3>
+  <div class="review-box d-flex justify-content-center mt-4 mr-3">
+    <% @outfit.reviews.each do |review| %>
+    <div class="card-product-rew d-flex mr-4">
+      <%= image_tag('dress 4.jpg', class: "img-rev") %>
+      <div class="card-product-infos-rev">
+        <h2> <strong><%= review.user.full_name %></strong> </h2>
+        <p> <%= review.content %> </p>
+        <span><% review.rating.times do %>
+          <i class="fas fa-star gold"></i>
+          <% end %>
+        </span>
+      </div>
+    </div>
+    <% end %>
   </div>
-</div>
-
-
-<% end %>
-</div>
 </div>
 </div>
 
