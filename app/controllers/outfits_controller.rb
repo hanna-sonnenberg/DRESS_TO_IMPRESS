@@ -3,8 +3,20 @@ class OutfitsController < ApplicationController
   before_action :set_outfit, only: [:show, :delete, :edit, :update, :destroy]
 
   def index
-    @outfits = Outfit.where(category: params[:category])
-    @category = params[:category]
+    if params[:query].present?
+      sql_query = " \
+        outfits.name @@ :query \
+        OR outfits.description @@ :query \
+        OR users.first_name @@ :query \
+        OR users.last_name @@ :query \
+      "
+      @outfits = Outfit.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+    elsif params[:category].present?
+      @outfits = Outfit.where(category: params[:category])
+      @category = params[:category]
+    else
+      @outfits = Outfit.all
+    end
 
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = @outfits.geocoded.map do |outfit|
@@ -18,8 +30,16 @@ class OutfitsController < ApplicationController
   end
 
   def show
-    @review = Review.new
     @booking = Booking.new
+    @marker =
+      [{
+        lat: @outfit.latitude,
+        lng: @outfit.longitude,
+        image_url: helpers.image_url('marker2.png')
+      }]
+
+     @average = @outfit.reviews.average(:rating).to_i
+
   end
 
   def new
@@ -27,7 +47,6 @@ class OutfitsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -60,6 +79,8 @@ class OutfitsController < ApplicationController
     end
 
     def outfit_params
-      params.require(:outfit).permit(:name, :size, :gender, :price, :category, :location, :photos, :start_date, :end_date)
+
+      params.require(:outfit).permit(:name, :size, :gender, :price, :category, :location, :start_date, :end_date, :description, photos: [])
+
     end
 end

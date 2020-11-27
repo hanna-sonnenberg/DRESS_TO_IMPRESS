@@ -5,6 +5,34 @@
   margin-bottom: 0px;
   text-decoration: underline;
 }
+// Review
+.card-product-rew .card-product-infos-rev {
+  padding: 16px;
+  h2 {
+   font-size: 16px;
+ }
+ p {
+  font-size: 14px;
+ }
+}
+
+.card-product-rew {
+position: relative;
+height: 120px;
+box-shadow: 0 0 15px rgba(0,0,0,0.2);
+span {
+   position: absolute;
+   right: 2px;
+   bottom: 1px;
+  }
+}
+.img-rev {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+
+// Bootstrap
 
 .card-product {
   overflow: hidden;
@@ -36,15 +64,12 @@
   margin-top: 8px;
 }
 
-.card-product .card-product-infos {
-  padding: 16px;
-}
 .card-category {
   margin: 20px;
   background-size: cover;
   background-position: center;
-  width: 350px;
-  height: 180px;
+  width: 400px;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,7 +80,7 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  opacity: 0.6;
+  opacity: 0.7;
   &:hover {
     opacity: 0.9;
     transition-time: 0.3s;
@@ -71,7 +96,8 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 10px;
-  width: 300px;
+  width: 250px;
+  color: black;
 }
 
 .card-trip > img {
@@ -79,7 +105,6 @@
   width: 100%;
   object-fit: cover;
   margin: 5px;
-
 }
 
 .card-trip h2 {
@@ -137,3 +162,31 @@
 #category-title {
   padding-top: 16px;
 }
+
+
+// Dashboard img
+.card-img-top {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+
+}
+.card {
+  height: 350px;
+  width: 200px;
+  margin: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
