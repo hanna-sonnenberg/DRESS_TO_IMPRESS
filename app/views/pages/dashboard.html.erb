@@ -11,11 +11,11 @@
   <div id="Outfits" class="tabcontent-initial tabcontent">
     <div class="card-container">
       <% @user.outfits.each do |outfit| %>
-      <div class="card" style="height: auto">
+      <div class="card card-dash" style="height: auto">
         <% if outfit.photos.attached? %>
-        <%= cl_image_tag(outfit.photos[0].key, width: 350, height: 250, crop: :fill, class: 'card-img-top rounded') %>
+        <%= cl_image_tag(outfit.photos[0].key, width: 350, height: 250, crop: :fill, class: 'card-img-user rounded') %>
         <% else %>
-        <%= image_tag('banner_image.jpg', width: 350, height: 250, crop: :fill, class: 'card-img-top rounded') %>
+        <%= image_tag('banner_image.jpg', width: 350, height: 250, crop: :fill, class: 'card-img-default rounded') %>
         <% end %>
         <%#= image_tag('banner_image.jpg', class: 'card-img-top rounded-top') %>
         <%#= outfit.photos %>
@@ -45,7 +45,7 @@
   <div id="Bookings" class="tabcontent">
     <div class="card-container-bookings">
       <% @user.bookings.each do |booking| %>
-      <div class="card">
+      <div class="card card-dash-booking">
         <div class="card-body">
           <h5 class="card-title">
             <% if booking.outfit.photos.attached? %>
