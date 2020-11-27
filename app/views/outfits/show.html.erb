@@ -70,9 +70,9 @@
 
 <div class="reviews mt-4">
   <h3 class="text-center"><strong>Reviews</strong></h3>
-  <div class="review-box d-flex justify-content-center mt-4 mr-3">
+  <div class="review-box d-flex flex-wrap justify-content-center mt-4 mr-3">
     <% @outfit.reviews.each do |review| %>
-    <div class="card-product-rew d-flex mr-4">
+    <div class="card-product-rew d-flex mr-4 mb-3">
       <%= image_tag('dress 4.jpg', class: "img-rev") %>
       <div class="card-product-infos-rev">
         <h2> <strong><%= review.user.full_name %></strong> </h2>
