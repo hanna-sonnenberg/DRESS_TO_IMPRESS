@@ -11,11 +11,11 @@
   <div id="Outfits" class="tabcontent-initial tabcontent">
     <div class="card-container">
       <% @user.outfits.each do |outfit| %>
-      <div class="card">
+      <div class="card" style="height: auto">
         <% if outfit.photos.attached? %>
-        <%= cl_image_tag(outfit.photos[0].key, class: 'card-img-top') %>
+        <%= cl_image_tag(outfit.photos[0].key, width: 350, height: 300, crop: :fill, class: 'card-img-top rounded') %>
         <% else %>
-        <%= image_tag('banner_image.jpg', class: 'card-img-top') %>
+        <%= image_tag('banner_image.jpg', class: 'card-img-top rounded') %>
         <% end %>
         <%#= image_tag('banner_image.jpg', class: 'card-img-top rounded-top') %>
         <%#= outfit.photos %>

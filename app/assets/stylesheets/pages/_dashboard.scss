@@ -9,15 +9,20 @@
 
 .card-container {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .card {
   width: 350px;
   margin-bottom: 50px;
 }
+
+.card-image-top {
+  height: 300px;
+  object-fit: contain;
+}
+
 
 .card-body {
   padding: 0;
