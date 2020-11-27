@@ -68,15 +68,19 @@
   </div>
 
   <h2 class="text-center mb-4">RECENT BOOKED</h2>
-  <div class="d-flex flex-wrap justify-content-center">
+  <div class="d-flex justify-content-center">
     <% @recent_bookings.each_with_index do |booking, index| %>
     <%= link_to outfit_path(:id => booking[:outfit_id]) do %>
-    <div class="card-trip">
+    <div class="card-book d-flex flex-column">
       <% if @outfits[index].photos.attached? %>
         <%= cl_image_tag @outfits[index].photos[0].key, class: 'card-img-top rounded-top' %>
       <% else %>
           <%= image_tag('banner_image.jpg', class: 'card-img-top') %>
-        <% end %>
+      <% end %>
+      <div class="text-info">
+        <p><%=  @outfits[index][:name].capitalize %></p>
+        <p><%=  @outfits[index][:location].capitalize %></p>
+      </div>
     </div>
     <% end %>
     <% end %>
